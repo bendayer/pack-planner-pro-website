@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/dog-walking-software-uk", "destination": "/dog-walking-software-uk.html" },
+    { "source": "/dog-walking-software-no-monthly-fee", "destination": "/dog-walking-software-no-monthly-fee.html" },
+    { "source": "/dog-walking-software-for-sole-traders", "destination": "/dog-walking-software-for-sole-traders.html" },
+    { "source": "/dog-walking-scheduling-software", "destination": "/dog-walking-scheduling-software.html" },
+    { "source": "/pet-care-software", "destination": "/pet-care-software.html" }
+  ]
+}
