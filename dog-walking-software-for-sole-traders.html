@@ -123,44 +123,19 @@
 </script>
 
 <!-- ── Fonts + Tailwind ── -->
+<!-- ── Favicon ── -->
+<link rel="icon" type="image/png" href="/assits/main_logo.png"/>
+<link rel="apple-touch-icon" href="/assits/main_logo.png"/>
+
+<!-- ── Performance: Font preconnect + async load ── -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"/></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"/></noscript>
 
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          "canvas":        "#F7F5EF",
-          "canvas-alt":    "#F2F4F6",
-          "surface":       "#FFFFFF",
-          "primary":       "#0033A0",
-          "primary-dark":  "#00216E",
-          "ink":           "#1A1C2C",
-          "ink-secondary": "#444653",
-          "success":       "#2F9E6A",
-          "outline":       "#D4D6E0",
-          "app-dark":      "#101C2E",
-        },
-        fontFamily: {
-          "headline": ["Manrope", "sans-serif"],
-          "body":     ["Manrope", "sans-serif"]
-        },
-        borderRadius: {
-          "DEFAULT": "0.5rem",
-          "lg":  "0.75rem",
-          "xl":  "1rem",
-          "2xl": "1.5rem",
-          "3xl": "2rem",
-          "full":"9999px"
-        }
-      }
-    }
-  }
-</script>
+
 
 <style>
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
@@ -390,7 +365,7 @@
   <nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
     <div>
       <a href="/index.html" style="text-decoration:none;display:block;">
-        <img src="assits/main_logo.png" alt="Pack Planner Pro" height="40" style="height:40px;width:auto;display:block;">
+        <img src="assits/main_logo.png" alt="Pack Planner Pro" width="120" height="40" fetchpriority="high" style="height:40px;width:auto;display:block;">
       </a>
     </div>
     <div class="hidden md:flex items-center space-x-8">
@@ -1136,7 +1111,7 @@
 <footer class="section-alt py-12 px-6" style="border-top:1px solid #E4E6EF;">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
     <div>
-      <img src="assits/main_logo.png" alt="Pack Planner Pro" height="32" style="height:32px;width:auto;display:block;margin-bottom:4px;">
+      <img src="assits/main_logo.png" alt="Pack Planner Pro" width="96" height="32" loading="lazy" style="height:32px;width:auto;display:block;margin-bottom:4px;">
       <div class="text-sm" style="color:#444653;">Dog walking software for UK sole traders. One-time purchase £79. No subscription, no per-user fee, no cloud. By Jennie's Positive Paws.</div>
     </div>
     <div class="flex items-center gap-8 text-sm font-medium" style="color:#444653;">
@@ -1434,5 +1409,38 @@ function pppToggleFaq(item) {
 })();
 </script>
 
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "canvas":        "#F7F5EF",
+          "canvas-alt":    "#F2F4F6",
+          "surface":       "#FFFFFF",
+          "primary":       "#0033A0",
+          "primary-dark":  "#00216E",
+          "ink":           "#1A1C2C",
+          "ink-secondary": "#444653",
+          "success":       "#2F9E6A",
+          "outline":       "#D4D6E0",
+          "app-dark":      "#101C2E",
+        },
+        fontFamily: {
+          "headline": ["Manrope", "sans-serif"],
+          "body":     ["Manrope", "sans-serif"]
+        },
+        borderRadius: {
+          "DEFAULT": "0.5rem",
+          "lg":  "0.75rem",
+          "xl":  "1rem",
+          "2xl": "1.5rem",
+          "3xl": "2rem",
+          "full":"9999px"
+        }
+      }
+    }
+  }
+</script>
 </body>
 </html>
