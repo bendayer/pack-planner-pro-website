@@ -25,41 +25,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          "canvas":        "#F7F5EF",
-          "canvas-alt":    "#F2F4F6",
-          "surface":       "#FFFFFF",
-          "primary":       "#0033A0",
-          "primary-dark":  "#00216E",
-          "ink":           "#1A1C2C",
-          "ink-secondary": "#444653",
-          "success":       "#2F9E6A",
-          "outline":       "#D4D6E0",
-        },
-        fontFamily: {
-          "headline": ["Manrope", "sans-serif"],
-          "body":     ["Manrope", "sans-serif"]
-        },
-        borderRadius: {
-          "DEFAULT": "0.5rem",
-          "lg":  "0.75rem",
-          "xl":  "1rem",
-          "2xl": "1.5rem",
-          "3xl": "2rem",
-          "full":"9999px"
-        }
-      }
-    }
-  }
-</script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"/></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"/></noscript>
+<link rel="preload" as="style" href="/styles/tailwind.css"/>
+<link rel="stylesheet" href="/styles/tailwind.css"/>
 
 <style>
   .material-symbols-outlined {
