@@ -10,6 +10,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/contact", "destination": "/contact.html" },
     { "source": "/dog-walking-software-uk", "destination": "/dog-walking-software-uk.html" },
     { "source": "/dog-walking-software-no-monthly-fee", "destination": "/dog-walking-software-no-monthly-fee.html" },
     { "source": "/dog-walking-software-for-sole-traders", "destination": "/dog-walking-software-for-sole-traders.html" },
