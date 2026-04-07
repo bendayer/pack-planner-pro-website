@@ -16,6 +16,13 @@
   </url>
 
   <url>
+    <loc>https://www.packplannerpro.co.uk/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+
+  <url>
     <loc>https://www.packplannerpro.co.uk/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
