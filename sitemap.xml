@@ -3,14 +3,14 @@
 
   <!-- ── Core pages ── -->
   <url>
-    <loc>https://packplannerpro.co.uk/</loc>
+    <loc>https://www.packplannerpro.co.uk/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <lastmod>2026-04-04</lastmod>
   </url>
 
   <url>
-    <loc>https://packplannerpro.co.uk/contact.html</loc>
+    <loc>https://www.packplannerpro.co.uk/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <lastmod>2026-04-04</lastmod>
@@ -18,35 +18,35 @@
 
   <!-- ── Landing pages ── -->
   <url>
-    <loc>https://packplannerpro.co.uk/dog-walking-software-uk</loc>
+    <loc>https://www.packplannerpro.co.uk/dog-walking-software-uk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <lastmod>2026-04-04</lastmod>
   </url>
 
   <url>
-    <loc>https://packplannerpro.co.uk/dog-walking-software-no-monthly-fee</loc>
+    <loc>https://www.packplannerpro.co.uk/dog-walking-software-no-monthly-fee</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-04</lastmod>
   </url>
 
   <url>
-    <loc>https://packplannerpro.co.uk/dog-walking-software-for-sole-traders</loc>
+    <loc>https://www.packplannerpro.co.uk/dog-walking-software-for-sole-traders</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-04-04</lastmod>
   </url>
 
   <url>
-    <loc>https://packplannerpro.co.uk/dog-walking-scheduling-software</loc>
+    <loc>https://www.packplannerpro.co.uk/dog-walking-scheduling-software</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-04-04</lastmod>
   </url>
 
   <url>
-    <loc>https://packplannerpro.co.uk/pet-care-software</loc>
+    <loc>https://www.packplannerpro.co.uk/pet-care-software</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-04-04</lastmod>
