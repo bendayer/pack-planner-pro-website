@@ -557,7 +557,43 @@
   #mobile-menu a.mob-link:hover { color:#0033A0; }
   #mobile-menu a.mob-cta { display:block;margin:16px 24px 20px;padding:14px;text-align:center;background:linear-gradient(135deg,#00216E,#0033A0);color:#FFFFFF;border-radius:0.75rem;font-family:'Manrope',sans-serif;font-weight:800;font-size:0.875rem;text-decoration:none;box-shadow:0 4px 14px rgba(0,33,110,0.25); }
 </style>
-<script defer src="https://payhip.com/payhip.js"></script>
+<script>
+  (function () {
+    var payhipLoaded = false;
+    function loadPayhip() {
+      if (payhipLoaded) return;
+      payhipLoaded = true;
+      var script = document.createElement('script');
+      script.src = 'https://payhip.com/payhip.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    var pricingSection = document.getElementById('pricing');
+    var buttons = document.querySelectorAll('.payhip-buy-button');
+
+    buttons.forEach(function (button) {
+      ['pointerenter', 'focus', 'touchstart'].forEach(function (eventName) {
+        button.addEventListener(eventName, loadPayhip, { once: true, passive: true });
+      });
+      button.addEventListener('click', loadPayhip, { once: true });
+    });
+
+    if ('IntersectionObserver' in window && pricingSection) {
+      var pricingObserver = new IntersectionObserver(function (entries) {
+        if (entries.some(function (entry) { return entry.isIntersecting; })) {
+          loadPayhip();
+          pricingObserver.disconnect();
+        }
+      }, { rootMargin: '200px 0px' });
+      pricingObserver.observe(pricingSection);
+    } else {
+      window.addEventListener('load', function () {
+        setTimeout(loadPayhip, 1500);
+      }, { once: true });
+    }
+  })();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD5MNET36T"></script>
 <script>

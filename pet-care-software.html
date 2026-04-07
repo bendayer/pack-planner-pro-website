@@ -359,7 +359,43 @@
   @media (prefers-reduced-motion:reduce) { .fc-thumb * { animation:none!important; } }
 </style>
 
-<script defer src="https://payhip.com/payhip.js"></script>
+<script>
+  (function () {
+    var payhipLoaded = false;
+    function loadPayhip() {
+      if (payhipLoaded) return;
+      payhipLoaded = true;
+      var script = document.createElement('script');
+      script.src = 'https://payhip.com/payhip.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    var pricingSection = document.getElementById('pricing');
+    var buttons = document.querySelectorAll('.payhip-buy-button');
+
+    buttons.forEach(function (button) {
+      ['pointerenter', 'focus', 'touchstart'].forEach(function (eventName) {
+        button.addEventListener(eventName, loadPayhip, { once: true, passive: true });
+      });
+      button.addEventListener('click', loadPayhip, { once: true });
+    });
+
+    if ('IntersectionObserver' in window && pricingSection) {
+      var pricingObserver = new IntersectionObserver(function (entries) {
+        if (entries.some(function (entry) { return entry.isIntersecting; })) {
+          loadPayhip();
+          pricingObserver.disconnect();
+        }
+      }, { rootMargin: '200px 0px' });
+      pricingObserver.observe(pricingSection);
+    } else {
+      window.addEventListener('load', function () {
+        setTimeout(loadPayhip, 1500);
+      }, { once: true });
+    }
+  })();
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD5MNET36T"></script>
 <script>
