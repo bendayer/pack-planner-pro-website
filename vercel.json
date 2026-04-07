@@ -1,4 +1,14 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "packplannerpro.co.uk" }
+      ],
+      "destination": "https://www.packplannerpro.co.uk/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/dog-walking-software-uk", "destination": "/dog-walking-software-uk.html" },
     { "source": "/dog-walking-software-no-monthly-fee", "destination": "/dog-walking-software-no-monthly-fee.html" },
