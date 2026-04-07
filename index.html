@@ -588,7 +588,7 @@
   #mobile-menu a.mob-link:hover { color:#0033A0; }
   #mobile-menu a.mob-cta { display:block;margin:16px 24px 20px;padding:14px;text-align:center;background:linear-gradient(135deg,#00216E,#0033A0);color:#FFFFFF;border-radius:0.75rem;font-family:'Manrope',sans-serif;font-weight:800;font-size:0.875rem;text-decoration:none;box-shadow:0 4px 14px rgba(0,33,110,0.25); }
 </style>
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+<script defer src="https://payhip.com/payhip.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD5MNET36T"></script>
 <script>
@@ -619,7 +619,7 @@
       <a class="nav-link" href="#features">Features</a>
       <a class="nav-link" href="#pricing">Pricing</a>
       <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="nav-link" href="/contact">Contact</a>
     </div>
     <div class="flex items-center gap-3">
       <button id="nav-hamburger" class="md:hidden flex flex-col justify-center items-center gap-1.5 rounded-lg" style="width:36px;height:36px;background:transparent;border:none;cursor:pointer;padding:0;" aria-label="Open menu" onclick="var m=document.getElementById('mobile-menu');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'));" aria-expanded="false">
@@ -636,7 +636,7 @@
     <a class="mob-link" href="#features" onclick="document.getElementById('mobile-menu').classList.remove('open');">Features</a>
     <a class="mob-link" href="#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open');">Pricing</a>
     <a class="mob-link" href="#about" onclick="document.getElementById('mobile-menu').classList.remove('open');">About</a>
-    <a class="mob-link" href="contact.html" onclick="document.getElementById('mobile-menu').classList.remove('open');">Contact</a>
+    <a class="mob-link" href="/contact" onclick="document.getElementById('mobile-menu').classList.remove('open');">Contact</a>
     <a class="mob-cta" href="#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open');">Get Pack Planner Pro · £79</a>
   </div>
 </header>
@@ -1138,7 +1138,7 @@
           <div class="flex-1 fc-thumb" style="padding:8px;display:flex;flex-direction:column;gap:6px;">
             <div style="background:#FFFFFF;border-radius:8px;border:1px solid #E4E6EF;overflow:hidden;animation:fcEnv 5s infinite ease;will-change:opacity,transform;">
               <div style="background:#F7F9FB;border-bottom:1px solid #E4E6EF;padding:7px 10px;">
-                <div style="font-size:9px;color:#747684;font-family:'Manrope',sans-serif;">To: <span style="color:#1A1C2C;font-weight:600;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c3f2d3e2d240c3b2d2027293e3f2f23622f2321">[email&#160;protected]</a></span></div>
+                <div style="font-size:9px;color:#747684;font-family:'Manrope',sans-serif;">To: <span style="color:#1A1C2C;font-weight:600;"><a href="mailto:hello@packplannerpro.co.uk" style="color:#1A1C2C;text-decoration:none;">hello@packplannerpro.co.uk</a></span></div>
               </div>
               <div style="padding:8px 10px;">
                 <div style="font-size:10px;font-weight:700;color:#1A1C2C;font-family:'Manrope',sans-serif;margin-bottom:7px;">Your week: 16–22 Mar</div>
@@ -1794,7 +1794,7 @@
            style="background:#FFFFFF;color:#0033A0;">
           Get Pack Planner Pro · £79
         </a>
-        <a href="contact.html" class="font-medium underline underline-offset-4 transition-colors text-base" style="color:rgba(255,255,255,0.65);"
+        <a href="/contact" class="font-medium underline underline-offset-4 transition-colors text-base" style="color:rgba(255,255,255,0.65);"
            onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">
           Have a question? Get in touch
         </a>
@@ -1820,7 +1820,7 @@
       <a href="#features" style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Features</a>
       <a href="#pricing"  style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Pricing</a>
       <a href="#about"    style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">About</a>
-      <a href="contact.html" style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Contact</a>
+      <a href="/contact" style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Contact</a>
     </div>
     <div class="flex flex-col items-end gap-2">
       <p class="text-sm" style="color:#9EA0AC;">© 2026 Jennie's Positive Paws. All rights reserved.</p>
@@ -1866,7 +1866,7 @@
   </ul>
 </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function () {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
