@@ -401,11 +401,6 @@
     .reveal.in   { opacity: 1 !important; transform: none !important; transition: none !important; }
     .orb-inner   { animation: none !important; }
   }
-  @media (max-width: 767px) {
-    .reveal,
-    .reveal.in   { opacity: 1 !important; transform: none !important; transition: none !important; }
-    .orb-inner   { animation: none !important; }
-  }
 
   /* ── Screenshot mockup tilt ── */
   .screenshot-tilt-left  { transform: rotate(-1deg); transition: transform 0.4s ease; }
@@ -457,12 +452,6 @@
   #cmp-table-wrap tbody tr:hover [data-ppp-cell] { background-color: rgba(0,51,160,0.09) !important; }
 
   @media (prefers-reduced-motion: reduce) {
-    .tbl-row, .tbl-row.in { opacity: 1 !important; transform: none !important; transition: none !important; }
-    .tbl-icon             { transform: scale(1) !important; }
-    .tbl-icon.pop         { animation: none !important; }
-    .tbl-callout, .tbl-callout.in { opacity: 1 !important; transform: none !important; transition: none !important; }
-  }
-  @media (max-width: 767px) {
     .tbl-row, .tbl-row.in { opacity: 1 !important; transform: none !important; transition: none !important; }
     .tbl-icon             { transform: scale(1) !important; }
     .tbl-icon.pop         { animation: none !important; }
@@ -1884,8 +1873,7 @@
 
 <script>
 (function () {
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-                      window.matchMedia('(max-width: 767px)').matches;
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ══════════════════════════════════════
      1. PARALLAX GRADIENT ORBS
@@ -1975,8 +1963,7 @@
 
 <script id="table-anim">
 (function () {
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-                      window.matchMedia('(max-width: 767px)').matches;
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var tableWrap = document.getElementById('cmp-table-wrap');
   var rows      = document.querySelectorAll('[data-table-row]');
@@ -2073,8 +2060,7 @@
 <script>
 (function () {
   'use strict';
-  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches ||
-      window.matchMedia('(max-width: 767px)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
 
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
@@ -2295,8 +2281,7 @@ function pppToggleFaq(item) {
 
 /* ── Stat Strip Count-Up (data-statup) ── */
 (function () {
-  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches ||
-      window.matchMedia('(max-width: 767px)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
 
   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 
