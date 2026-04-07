@@ -39,6 +39,10 @@ This document should be updated whenever:
 | `/dog-walking-software-for-sole-traders` | Audience landing page | 0.8 |
 | `/dog-walking-scheduling-software` | Feature landing page | 0.7 |
 | `/pet-care-software` | Broad audience landing page | 0.7 |
+| `/blog` | Blog hub | 0.6 |
+| `/blog/how-to-organise-your-dog-walking-schedule` | Blog post | 0.5 |
+| `/blog/dog-walking-invoicing-how-to-invoice-clients-properly` | Blog post | 0.5 |
+| `/blog/moving-from-spreadsheets-to-proper-dog-walking-software` | Blog post | 0.5 |
 | `/contact` | Contact page | 0.4 |
 
 ## 3. Stable SEO Rules
@@ -47,6 +51,7 @@ This document should be updated whenever:
 - Use `https://www.packplannerpro.co.uk/...` everywhere for canonical URLs, `og:url`, sitemap entries, and schema URLs.
 - Keep clean public routes:
   - `/contact`
+  - `/blog`
   - `/dog-walking-software-uk`
   - `/dog-walking-software-no-monthly-fee`
   - `/dog-walking-software-for-sole-traders`
@@ -107,6 +112,7 @@ This document should be updated whenever:
 - Canonicals use `www`
 - Sitemap uses `www`
 - `/contact` resolves correctly
+- blog hub exists at `/blog`
 - Speed Insights script is present
 - Static Tailwind CSS is in place
 - Payhip script is delayed
@@ -253,3 +259,4 @@ Use this alongside the normal monthly SEO review:
 - Payhip loading delayed
 - favicon assets reduced substantially in size
 - Added 2026 AI-search and SEO operating guidance
+- Added blog hub and first 3 blog posts

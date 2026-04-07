@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- ── Core pages ── -->
   <url>
     <loc>https://www.packplannerpro.co.uk/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-07</lastmod>
   </url>
 
   <url>
@@ -16,7 +15,34 @@
     <lastmod>2026-04-04</lastmod>
   </url>
 
-  <!-- ── Landing pages ── -->
+  <url>
+    <loc>https://www.packplannerpro.co.uk/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.packplannerpro.co.uk/blog/how-to-organise-your-dog-walking-schedule</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.packplannerpro.co.uk/blog/dog-walking-invoicing-how-to-invoice-clients-properly</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.packplannerpro.co.uk/blog/moving-from-spreadsheets-to-proper-dog-walking-software</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-04-07</lastmod>
+  </url>
+
   <url>
     <loc>https://www.packplannerpro.co.uk/dog-walking-software-uk</loc>
     <changefreq>monthly</changefreq>
