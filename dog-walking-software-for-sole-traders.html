@@ -150,6 +150,7 @@
 
 <link rel="preload" as="style" href="/styles/tailwind.css"/>
 <link rel="stylesheet" href="/styles/tailwind.css"/>
+<link rel="stylesheet" href="/styles/cookie-consent.css"/>
 <style>
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   body { font-family: 'Manrope', sans-serif; background: #F7F5EF; color: #1A1C2C; overflow-x: hidden; }
@@ -371,6 +372,38 @@
       document.head.appendChild(script);
     }
 
+    function trackBuyClick(event, button) {
+      if (typeof gtag !== 'function' || !button || button.dataset.buyTracked === 'true') return;
+      button.dataset.buyTracked = 'true';
+
+      var targetUrl = button.href;
+      var buttonText = (button.textContent || '').trim();
+      var productId = button.getAttribute('data-product') || '';
+      var navigated = false;
+
+      function continueToCheckout() {
+        if (navigated) return;
+        navigated = true;
+        window.location.href = targetUrl;
+      }
+
+      event.preventDefault();
+      gtag('event', 'buy_click', {
+        event_category: 'ecommerce',
+        event_label: productId || targetUrl,
+        value: 79,
+        currency: 'GBP',
+        product_id: productId,
+        button_text: buttonText,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        transport_type: 'beacon',
+        event_callback: continueToCheckout
+      });
+
+      setTimeout(continueToCheckout, 250);
+    }
+
     var pricingSection = document.getElementById('pricing');
     var buttons = document.querySelectorAll('.payhip-buy-button');
 
@@ -378,7 +411,10 @@
       ['pointerenter', 'focus', 'touchstart'].forEach(function (eventName) {
         button.addEventListener(eventName, loadPayhip, { once: true, passive: true });
       });
-      button.addEventListener('click', loadPayhip, { once: true });
+      button.addEventListener('click', function (event) {
+        loadPayhip();
+        trackBuyClick(event, button);
+      }, { once: true });
     });
 
     if ('IntersectionObserver' in window && pricingSection) {
@@ -397,10 +433,9 @@
   })();
 </script>
 <!-- Google tag (gtag.js) -->
+<script src="/scripts/cookie-consent.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD5MNET36T"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-DD5MNET36T');
 </script>
