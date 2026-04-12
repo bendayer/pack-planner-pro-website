@@ -373,12 +373,9 @@
     }
 
     function trackBuyClick(event, button) {
-      if (typeof gtag !== 'function' || !button || button.dataset.buyTracked === 'true') return;
-      button.dataset.buyTracked = 'true';
+      if (!button) return;
 
       var targetUrl = button.href;
-      var buttonText = (button.textContent || '').trim();
-      var productId = button.getAttribute('data-product') || '';
       var navigated = false;
 
       function continueToCheckout() {
@@ -388,20 +385,20 @@
       }
 
       event.preventDefault();
-      gtag('event', 'buy_click', {
-        event_category: 'ecommerce',
-        event_label: productId || targetUrl,
-        value: 79,
-        currency: 'GBP',
-        product_id: productId,
-        button_text: buttonText,
-        page_location: window.location.href,
-        page_path: window.location.pathname,
-        transport_type: 'beacon',
-        event_callback: continueToCheckout
-      });
 
-      setTimeout(continueToCheckout, 250);
+      if (typeof gtag === 'function') {
+        gtag('event', 'begin_checkout', {
+          currency: 'GBP',
+          value: 79,
+          event_callback: continueToCheckout
+        });
+        gtag('event', 'ppp_purchase_click', {
+          event_callback: continueToCheckout
+        });
+        setTimeout(continueToCheckout, 500);
+      } else {
+        continueToCheckout();
+      }
     }
 
     var pricingSection = document.getElementById('pricing');
@@ -1552,10 +1549,7 @@ document.addEventListener('click', function (event) {
     link_url: href
   };
 
-  if (href.indexOf('payhip.com/b/XylDm') !== -1) {
-    pppTrack('ppp_purchase_click', payload);
-    pppTrack('begin_checkout', { currency: 'GBP', value: 79 });
-  } else if (href.indexOf('#pricing') !== -1 || href.indexOf('/#pricing') !== -1) {
+  if (href.indexOf('#pricing') !== -1 || href.indexOf('/#pricing') !== -1) {
     pppTrack('ppp_pricing_cta_click', payload);
   } else if (href.indexOf('/contact') !== -1 || href.indexOf('contact.html') !== -1) {
     pppTrack('ppp_contact_click', payload);
