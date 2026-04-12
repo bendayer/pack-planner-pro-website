@@ -611,13 +611,13 @@
   })();
 </script>
 <!-- Google tag (gtag.js) -->
-<script src="/scripts/cookie-consent.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD5MNET36T"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
   gtag('js', new Date());
-  gtag('config', 'G-DD5MNET36T');
+  gtag('config', 'G-DD5MNET36T', { send_page_view: true });
 
   function pppTrack(eventName, params) {
     if (typeof gtag === 'function') {
@@ -626,6 +626,7 @@
     }
   }
 </script>
+<script src="/scripts/cookie-consent.js"></script>
 <!-- Vercel Speed Insights -->
 <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
