@@ -1,204 +1,202 @@
 # Pack Planner Pro Page SEO Actions
 
-This file translates the current repo state into practical on-page and technical SEO actions for Pack Planner Pro.
+This file translates the current repo state, GA4 data, Search Console data, and keyword research into a prioritised action queue.
 
-## Snapshot
+Last updated: 2026-04-12
 
-- The site already has the right core commercial page set.
-- The main gap is not page quantity.
-- The main gap is consistency, proof, and intent separation.
-- The next gap after technical cleanup is conversion clarity.
-- Real GA4 data now shows the homepage, `dog-walking-software-uk`, and contact page are the current centres of gravity.
-- Real Pack Planner Pro Search Console data now confirms early visibility on:
-- `dog-walking-software-uk`
-- `dog-walking-software-no-monthly-fee`
-- `dog-walking-software-for-sole-traders`
-- `dog-walking-scheduling-software`
-- both `/contact.html` and `/contact`
+---
 
-## Technical Actions
+## Site Snapshot
+
+- Traffic has started but the site is still early-stage
+- Organic search is live and already producing impressions on the right queries
+- The homepage and `/dog-walking-software-uk` are the current centres of gravity
+- `/dog-walking-software-no-monthly-fee` is the highest-urgency CTR opportunity
+- GA4 is now tracking page views and events
+- Contact form is fixed and tracking generate_lead events
+- Buy-button events (begin_checkout, ppp_purchase_click) are now firing with event_callback
+
+---
+
+## Technical Actions Remaining
 
 ### 1. Canonical host cleanup
 
-Why:
-- the site mostly uses `https://packplannerpro.co.uk`
-- `contact.html` currently uses `.com`
+Why: `contact.html` still uses `.com` in canonical, OG URL, and schema while all other pages use `.co.uk`
 
-What to do:
-- choose one canonical host
-- if `.co.uk` remains the live host, update the contact page canonical, OG URL, and `ContactPage` schema to match
-- if `.com` becomes the live host later, migrate the whole stack together
+What to do: align contact page canonical, OG URL, and ContactPage schema to `https://packplannerpro.co.uk`
 
-### 2. Contact route cleanup
+### 2. Contact route consolidation
 
-Why:
-- the sitemap currently lists `/contact.html`
-- metadata on the contact page suggests `/contact`
+Why: both `/contact.html` and `/contact` are appearing in Search Console — signal is split
 
-What to do:
-- choose one public route for the contact page
-- align sitemap, canonical, OG URL, schema, and internal links
-- only use a clean `/contact` route if rewrites or redirects are confirmed
+What to do: choose one route, align canonical, sitemap, OG URL, schema, and internal links
 
-### 3. Social image cleanup
+### 3. Social image
 
-Why:
-- the site points multiple metadata fields to `/assets/og-image.png`
-- no such file exists in this repo
+Why: `/assets/og-image.png` is referenced across all pages but the file does not exist
 
-What to do:
-- create a real social image asset
-- update `og:image`, `twitter:image`, and any schema screenshot fields to real files
-- add page-specific variants later for top landing pages
+What to do: create a real OG image asset and update all references
 
-## Page Priorities
+---
 
-### 1. Homepage
+## Phase 1 — Existing Page Improvements (do this before building anything new)
 
-Why:
-- this is the highest-authority page
-- it sets the product story and can absorb broad commercial intent
-- GA4 shows it is the most-viewed title in the current reporting window
+### 1. `/dog-walking-software-no-monthly-fee` — CTR and conversion priority
 
-What to improve:
-- keep the broad category angle
-- make sure it does not compete too directly with the dedicated landing pages
-- use the homepage for brand plus category intent, not every modifier at once
-- make the 5-second message clearer:
-- what it is
-- who it is for
-- why it is different
-- keep one dominant CTA path above the fold
-- add a short 3-step `how it works` section close to the first CTA cluster
+Why: Search Console shows position 5.25 with 0 clicks. The page is already ranking well enough to earn clicks. The title and above-the-fold copy are not compelling enough to get them.
 
-### 2. Dog Walking Software UK
+Actions:
+- Rewrite the title tag to lead with the savings and ownership angle
+- Rewrite the meta description as a direct answer with a clear reason to click
+- Strengthen the comparison block — show actual cost difference vs subscription tools
+- Add the no-subscription FAQ entries from the keyword roadmap
+- Use "no subscription" language alongside "no monthly fee" — both terms have search demand
+- Add objection-handling copy near the pricing section
 
-Why:
-- this should be the strongest non-home broad commercial landing page
-- GA4 shows it is already the strongest current landing page after the homepage
-- Search Console shows `11` impressions, `1` click, and average position `10.91`
+### 2. `/dog-walking-software-uk` — main SEO landing page
 
-What to improve:
-- make it the clearest answer for broad UK dog walking software intent
-- strengthen product proof with screenshots, workflow examples, and FAQ coverage
-- keep the angle broader than the no-subscription and sole-trader pages
-- lead with the buyer's problem before feature detail
-- add a `this is for you if` section for UK dog walkers and pet-care operators
+Why: the clearest near-page-1 opportunity. Position ~11 with 1 click and 11 impressions. Needs stronger relevance and proof to move up.
 
-### 3. Dog Walking Software No Monthly Fee
+Actions:
+- Strengthen as the clearest answer for broad UK dog walking software intent
+- Add "app" language alongside "software" — both terms are searched
+- Add a "this is for you if" section targeting UK dog walkers and pet-care operators
+- Strengthen with screenshots, workflow examples, and real feature proof
+- Add FAQ section covering: best dog walking software UK, what features do dog walkers need, does it work offline
+- Keep the angle broader than the no-subscription and sole-trader pages
 
-Why:
-- this is the strongest anti-subscription comparison angle
-- Search Console shows `8` impressions with average position `5.25` and `0` clicks
+### 3. `/dog-walking-software-for-sole-traders` — page 2 to page 1 push
 
-What to improve:
-- emphasise cost comparison, ownership, and no recurring fees
-- include a cleaner comparison block against monthly subscription tools
-- avoid duplicating the full homepage story
-- make the savings logic more scannable near the CTA
-- keep proof close to the pricing message so the page does not read like a claim without evidence
-- treat title, meta description, and first-screen copy as a CTR priority because this page is already ranking
+Why: position ~14 with 0 clicks. Needs sharper differentiation and a more compelling first screen to break onto page 1.
 
-### 4. Dog Walking Software for Sole Traders
+Actions:
+- Lead with the solo operator's specific problem — admin overload, doing everything alone
+- Highlight no per-user fees, simple setup, no technical complexity
+- Add a "what solo dog walkers use it for" section with specific examples
+- Add FAQ entries: is this suitable for one person, can I use it without staff, how long does setup take
+- Improve the meta description to reflect the solo-operator angle directly
 
-Why:
-- this is the best ICP-specific page in the current set
-- Search Console shows `9` impressions with average position `13.67` and `0` clicks
+### 4. `/dog-walking-scheduling-software` — feature proof push
 
-What to improve:
-- sharpen the messaging for solo operators
-- highlight no per-user fees, simple setup, and admin reduction
-- add more proof that the tool works for one-person businesses
-- reduce fear that the software is too complex for a one-person business
-- make the CTA feel personal and relevant to solo operators
-- strengthen snippet and above-the-fold differentiation so it can move from page 2 toward page 1
+Why: position ~36 with 1 click and 9 impressions. Weak position means the page is not clearly relevant enough for scheduling queries.
 
-### 5. Dog Walking Scheduling Software
+Actions:
+- Lead with the scheduling problem before feature detail
+- Add a step-by-step explanation of how scheduling works in practice
+- Use screenshots and examples tied to weekly planning and calendar export
+- Add scheduling-specific FAQs: can I see the whole week at once, can I assign walks to staff, does it export to Google Calendar
 
-Why:
-- this is the clearest feature-led landing page
-- Search Console shows `9` impressions, `1` click, but weak average position `35.56`
+### 5. Homepage — conversion and breadth improvements
 
-What to improve:
-- push the scheduling and planner workflow more strongly
-- use screenshots and examples tied to weekly planning, staff assignment, and calendar export
-- avoid drifting back into generic product copy
-- add a simple step-by-step explanation of how scheduling works in practice
-- support the feature pitch with scheduling-specific FAQs
-- decide whether this page needs stronger internal links and clearer keyword support to match its intent
+Why: the homepage absorbs brand and broad category intent. It should also set the comparison framing that supports all the landing pages.
 
-### 6. Pet Care Software
+Actions:
+- Add "app" and "software" language — use both
+- Sharpen the 5-second message: what it is, who it is for, why it is different from subscription tools
+- Add a short comparison or objection-handling block near the CTA
+- Add FAQ section using the comparison queries from the keyword roadmap
+- Keep one dominant CTA path above the fold
+- Add a simple 3-step how it works section
 
-Why:
-- this page can win broader category demand if it stays intentionally wider
+### 6. `/pet-care-software` — intent clarification
 
-What to improve:
-- decide whether the page truly targets a broader pet-care audience or whether it should stay tightly tied to dog walking and training businesses
-- avoid making it a near-copy of the homepage with a different title
+Why: getting impressions but angle is still unclear. Decide before Search Console data accumulates on the wrong intent.
 
-### 7. Contact Page Conversion Pass
+Actions:
+- Decide whether the page targets a broader pet-care audience or stays tightly tied to dog walking
+- If staying broad: make the pet-care angle genuinely different from the homepage
+- If narrowing: add dog training and pet-sitting specific language
 
-Why:
-- this is the page closest to a direct sales conversation
-- small friction here can waste the gains from all other SEO work
-- GA4 shows the contact page already has meaningful attention for the current traffic level
-- Search Console shows impressions and clicks for both `/contact.html` and `/contact`
+---
 
-What to improve:
-- add a visible response-time reassurance near the form
-- explain what happens after someone gets in touch
-- keep the page focused on one clear next step
-- align the social title and description with the improved contact-page positioning
-- consolidate the route so search signals are not split
+## Phase 2 — FAQ Layer Across All Pages
 
-### 8. Blog
+Every landing page should have an FAQ block. Priority questions per the keyword roadmap:
 
-Why:
-- Search Console shows impressions for:
-- `/blog`
+- What is the best dog walking software UK?
+- Is there dog walking software with no subscription?
+- Can I use dog walking software offline?
+- How do dog walkers manage their clients?
+- How much does dog walking software cost?
+- What dog walking software works on Windows?
+- Is Pack Planner Pro a one-time purchase?
+
+These directly match real search queries and will help pages rank for long-tail FAQ-style searches.
+
+---
+
+## Phase 3 — Blog Internal Linking
+
+Three blog posts are already live and collecting impressions:
+
 - `/blog/how-to-organise-your-dog-walking-schedule`
 - `/blog/dog-walking-invoicing-how-to-invoice-clients-properly`
 - `/blog/moving-from-spreadsheets-to-proper-dog-walking-software`
 
-Decision: these are LIVE strategic assets. Real blog content exists at all four URLs. Do NOT redirect them.
+Actions:
+- Every blog post should have a clear CTA pointing to the most relevant commercial page
+- `/how-to-organise` → link to `/dog-walking-scheduling-software`
+- `/invoicing` → link to homepage or contact
+- `/moving-from-spreadsheets` → link to `/dog-walking-software-no-monthly-fee`
+- Update `blog/index.html` when new posts are added
 
-What to improve:
-- strengthen internal links from blog posts into the commercial funnel
-- ensure each blog post has a relevant CTA pointing to the most relevant landing page
-- keep blog/index.html updated as new posts are added
+New blog posts to consider (based on keyword research):
+- How to start a dog walking business UK → broad top-of-funnel, links to homepage
+- Dog walking pricing guide UK → top-of-funnel, links to contact
+- Tools for dog walkers UK → comparison and product awareness
 
-## Recommended Build Order
+---
 
-1. Fix canonical host drift
-2. Fix contact route consistency
-3. Fix broken social image references
-4. Configure GA4 key events for form submission and primary CTA clicks
-5. Refresh the homepage
-6. Refresh `dog-walking-software-uk`
-7. Refresh `dog-walking-software-no-monthly-fee`
-8. Refresh the contact page
-9. Refresh `dog-walking-software-for-sole-traders`
-10. Refresh `dog-walking-scheduling-software`
-11. Review whether `pet-care-software` should stay broad or narrow
-12. Decide whether blog content is being rebuilt or redirected
+## Phase 4 — Comparison and Expansion (data-gated)
 
-## Quick Wins
+Only start these after Phase 1–3 are complete and Search Console shows the trigger conditions.
 
-- update the contact page social title and description so they match the improved title tag
-- create one reusable OG image immediately, even before page-specific variants exist
-- document real customer objections and phrases in `data/customer-voice/`
-- check whether each landing page's H1 and first paragraph clearly reflect its target intent
-- add customer-first subheads or support copy where pages currently jump straight into features
-- place testimonials, screenshots, or proof blocks closer to pricing and CTA sections
-- confirm whether old homepage variants or `test.html` are publicly reachable
-- decide what happens to the legacy blog titles still appearing in GA4
-- rewrite the title and meta for `dog-walking-software-no-monthly-fee` first because it is already ranking strongly enough to earn clicks
+### `/best-dog-walking-software-uk`
 
-## Current Strategic Read
+Build when: Search Console shows repeated impressions on "best dog walking software" or comparison queries.
 
-Pack Planner Pro does not need a content treadmill right now. The stronger path is:
+What it covers: direct comparison of Pack Planner Pro vs common alternatives, comparison table, clear ownership vs subscription positioning.
 
-- fix technical consistency first
-- keep the page set tight
-- differentiate the current landing pages more clearly
-- let Search Console data decide whether any new page is justified
+### `/dog-walker-invoicing-software`
+
+Build when: Search Console shows invoicing-specific demand not captured by existing pages.
+
+### `/offline-dog-walking-software`
+
+Build when: Search Console shows offline-specific demand. This is a strong USP angle but not yet confirmed by data.
+
+---
+
+## Current Highest-Priority Actions (April 2026)
+
+1. Rewrite title and meta for `/dog-walking-software-no-monthly-fee` — biggest CTR gain available right now
+2. Fix contact route and canonical consistency
+3. Create the OG image asset
+4. Strengthen `/dog-walking-software-uk` with app language, FAQ, and more proof
+5. Add FAQ sections across all five landing pages
+6. Strengthen blog CTAs to commercial pages
+7. Collect a wider Search Console export (28 days or 3 months) before making any new page decisions
+
+---
+
+## What Not to Build Yet
+
+- Comparison pages — wait for Search Console comparison query data
+- `/dog-walking-booking-software` — no confirmed demand yet
+- `/dog-walking-client-management` — could be blog first
+- `/dog-walking-route-planning` — no confirmed demand yet
+- Any new page that repeats content already on an existing page with a different keyword
+
+---
+
+## Strategic Read
+
+Pack Planner Pro does not need a content treadmill right now.
+
+The stronger path is:
+1. Fix the technical consistency gaps
+2. Sharpen each existing landing page for its specific intent
+3. Add FAQ coverage using the real search queries from the keyword roadmap
+4. Use blog posts to capture top-of-funnel traffic and push it to commercial pages
+5. Let Search Console data on a longer window decide whether any new page is justified
