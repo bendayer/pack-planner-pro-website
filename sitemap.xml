@@ -5,14 +5,14 @@
     <loc>https://www.packplannerpro.co.uk/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-12</lastmod>
   </url>
 
   <url>
     <loc>https://www.packplannerpro.co.uk/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-12</lastmod>
   </url>
 
   <url>
@@ -23,66 +23,38 @@
   </url>
 
   <url>
-    <loc>https://www.packplannerpro.co.uk/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-04-07</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.packplannerpro.co.uk/blog/how-to-organise-your-dog-walking-schedule</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-04-07</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.packplannerpro.co.uk/blog/dog-walking-invoicing-how-to-invoice-clients-properly</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-04-07</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.packplannerpro.co.uk/blog/moving-from-spreadsheets-to-proper-dog-walking-software</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-04-07</lastmod>
-  </url>
-
-  <url>
     <loc>https://www.packplannerpro.co.uk/dog-walking-software-uk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-12</lastmod>
   </url>
 
   <url>
     <loc>https://www.packplannerpro.co.uk/dog-walking-software-no-monthly-fee</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-12</lastmod>
   </url>
 
   <url>
     <loc>https://www.packplannerpro.co.uk/dog-walking-software-for-sole-traders</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-12</lastmod>
   </url>
 
   <url>
     <loc>https://www.packplannerpro.co.uk/dog-walking-scheduling-software</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-12</lastmod>
   </url>
 
   <url>
     <loc>https://www.packplannerpro.co.uk/pet-care-software</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-12</lastmod>
   </url>
 
 </urlset>

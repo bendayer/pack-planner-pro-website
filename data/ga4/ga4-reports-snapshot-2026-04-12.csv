@@ -1,0 +1,271 @@
+# ----------------------------------------
+# Reports snapshot
+# Account: Ben Dayer-Swan
+# Property: https://www.packplannerpro.co.uk/
+# ----------------------------------------
+#  
+# Start date: 20260315
+# End date: 20260411
+Nth day,Active users
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+0013,0
+0014,0
+0015,0
+0016,0
+0017,0
+0018,0
+0019,2
+0020,10
+0021,19
+0022,7
+0023,9
+0024,2
+0025,0
+0026,1
+0027,2
+
+# Start date: 20260315
+# End date: 20260411
+Nth day,New users
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+0013,0
+0014,0
+0015,0
+0016,0
+0017,0
+0018,0
+0019,2
+0020,8
+0021,16
+0022,6
+0023,7
+0024,0
+0025,0
+0026,0
+0027,0
+
+# Start date: 20260315
+# End date: 20260411
+Nth day,Average engagement time per active user
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+0013,0
+0014,0
+0015,0
+0016,0
+0017,0
+0018,0
+0019,86.5
+0020,80.8
+0021,37.05263157894737
+0022,7
+0023,147.66666666666666
+0024,20.5
+0025,0
+0026,13
+0027,15
+
+# Start date: 20260315
+# End date: 20260411
+Nth day,Total revenue
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+0013,0
+0014,0
+0015,0
+0016,0
+0017,0
+0018,0
+0019,0
+0020,0
+0021,0
+0022,0
+0023,0
+0024,0
+0025,0
+0026,0
+0027,0
+
+# Where do your new users come from?
+# Start date: 20260315
+# End date: 20260411
+First user primary channel group (Default Channel Group),New users
+Direct,38
+Referral,1
+
+#  
+# Start date: 20260315
+# End date: 20260411
+Session primary channel group (Default Channel Group),Sessions
+Direct,66
+Organic Search,19
+Referral,15
+Unassigned,5
+
+#  
+# Start date: 20260315
+# End date: 20260411
+Country ID,Active users
+CA,2
+DE,1
+FR,6
+GB,10
+IN,3
+NL,2
+PL,3
+US,11
+VN,1
+
+# Start date: 20260315
+# End date: 20260411
+Country,Active users
+US,11
+GB,10
+FR,6
+IN,3
+PL,3
+CA,2
+NL,2
+
+# How are active users trending?
+# Start date: 20260315
+# End date: 20260411
+Nth day,30 days,7 days,1 day
+0000,0,0,0
+0001,0,0,0
+0002,0,0,0
+0003,0,0,0
+0004,0,0,0
+0005,0,0,0
+0006,0,0,0
+0007,0,0,0
+0008,0,0,0
+0009,0,0,0
+0010,0,0,0
+0011,0,0,0
+0012,0,0,0
+0013,0,0,0
+0014,0,0,0
+0015,0,0,0
+0016,0,0,0
+0017,0,0,0
+0018,0,0,0
+0019,2,2,2
+0020,10,10,10
+0021,26,26,19
+0022,32,32,7
+0023,39,39,9
+0024,39,39,2
+0025,39,39,0
+0026,39,39,1
+0027,39,33,2
+
+# How well do you retain your users?
+# Start date: 20260301
+# End date: 20260411
+Date,Week 0,Week 1,Week 2,Week 3,Week 4,Week 5
+Mar 1 - Mar 7,0,0,0,0,0,0
+Mar 8 - Mar 14,0,0,0,0,0,-1
+Mar 15 - Mar 21,0,0,0,0,-1,-1
+Mar 22 - Mar 28,0,0,0,-1,-1,-1
+Mar 29 - Apr 4,10,4,-1,-1,-1,-1
+Apr 5 - Apr 11,29,-1,-1,-1,-1,-1
+
+#  
+# Start date: 20260315
+# End date: 20260411
+Page title and screen class,Views
+Dog Walking Software UK | Pack Planner Pro — Buy Once,87
+Pack Planner Pro — Dog Walking & Training Software UK | One-Time Purchase £79,38
+Dog Walking Software UK | No Monthly Fees | Pack Planner Pro,24
+Contact Pack Planner Pro | Dog Walking Software Support,17
+Pack Planner Pro Blog | Dog Walking Business Advice UK,11
+Dog Walking Software for Sole Traders UK | Pack Planner Pro,8
+Pack Planner Pro â€” Dog Walking & Training Software UK | One-Time Purchase Â£79,8
+"Pet Care Software UK | Pack Planner Pro — Buy Once, No Subscription",8
+Dog Walking Software No Monthly Fee | Pack Planner Pro,6
+Dog Walking Scheduling Software | Pack Planner Pro UK,4
+How to Organise Your Dog Walking Schedule | Pack Planner Pro,2
+Privacy Policy | Pack Planner Pro,2
+Dog Walking Invoicing: How to Invoice Clients Properly,1
+Moving From Spreadsheets to Proper Dog Walking Software,1
+
+#  
+# Start date: 20260315
+# End date: 20260411
+Event name,Event count
+page_view,217
+user_engagement,144
+session_start,100
+scroll,75
+first_visit,39
+click,3
+
+# What are your top performing key events?
+# Start date: 20260315
+# End date: 20260411
+Event name,Key events
+
+
+# Where does your average 120d value come from?
+# Start date: 20260315
+# End date: 20260411
+First user primary channel group (Default Channel Group),Average 120d value
+
+
+#  
+# Start date: 20260315
+# End date: 20260411
+Item name,Items purchased
+
+
+# How does activity on your platforms compare?
+# Start date: 20260315
+# End date: 20260411
+Platform,Key events
