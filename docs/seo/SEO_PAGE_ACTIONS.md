@@ -6,6 +6,27 @@ Last updated: 2026-04-12
 
 ---
 
+## Completed Work Log
+
+This section records what has been shipped so a new agent can pick up without repeating finished work.
+
+### 2026-04-12
+
+**Contact form** — fixed. The form-status element was missing from the HTML, causing the submit handler to crash before the fetch ran. Button was stuck on "Sending...". Fixed in `contact.html`.
+
+**GA4 page view tracking** — fixed. Two issues:
+1. `cookie-consent.js` was setting `analytics_storage: denied` by default, blocking all data collection from new visitors. Changed to `granted`.
+2. All pages were missing `window.dataLayer` and `function gtag()` declarations in the inline script.
+3. Execution order was wrong — consent default must come before `gtag('config', ...)` in the dataLayer queue. Fixed across all 11 pages including blog pages.
+
+**GA4 buy-button events** — fixed. `begin_checkout` and `ppp_purchase_click` were firing via `pppTrack` (fire-and-forget, no `event_callback`) so the redirect to Payhip was happening before GA4 sent the events. Consolidated into `trackBuyClick` with `event_callback` on both events and a 500ms fallback timeout. Fixed across all 6 commercial pages.
+
+**GA4 setup guide** — created at `docs/seo/GA4_SETUP_GUIDE.md`. Step-by-step instructions for marking key events in GA4 Admin. Written so an AI can walk Ben through it interactively.
+
+**Keyword roadmap** — rebuilt at `docs/seo/KEYWORD_ROADMAP.md`. Added tier structure, app vs software insight, comparison segment, FAQ keyword targets, blog keyword targets, and data-gated future page criteria.
+
+---
+
 ## Site Snapshot
 
 - Traffic has started but the site is still early-stage
@@ -47,8 +68,8 @@ What to do: create a real OG image asset and update all references
 Why: Search Console shows position 5.25 with 0 clicks. The page is already ranking well enough to earn clicks. The title and above-the-fold copy are not compelling enough to get them.
 
 Actions:
-- Rewrite the title tag to lead with the savings and ownership angle
-- Rewrite the meta description as a direct answer with a clear reason to click
+- ~~Rewrite the title tag to lead with the savings and ownership angle~~ — **DONE 2026-04-12** (`Dog Walking Software No Monthly Fee | £79 One-Time Purchase`)
+- ~~Rewrite the meta description as a direct answer with a clear reason to click~~ — **DONE 2026-04-12** (leads with £79, no-subscription angle, 149 chars)
 - Strengthen the comparison block — show actual cost difference vs subscription tools
 - Add the no-subscription FAQ entries from the keyword roadmap
 - Use "no subscription" language alongside "no monthly fee" — both terms have search demand
@@ -170,7 +191,10 @@ Build when: Search Console shows offline-specific demand. This is a strong USP a
 
 ## Current Highest-Priority Actions (April 2026)
 
-1. Rewrite title and meta for `/dog-walking-software-no-monthly-fee` — biggest CTR gain available right now
+1. ~~Rewrite title and meta for `/dog-walking-software-no-monthly-fee`~~ — **DONE 2026-04-12**
+   - Title: `Dog Walking Software No Monthly Fee | £79 One-Time Purchase`
+   - Meta: leads with £79 price, under 155 chars, no-subscription angle
+   - Remaining on this page: comparison block, FAQ section, objection-handling copy near pricing — see Phase 1 item 1
 2. Fix contact route and canonical consistency
 3. Create the OG image asset
 4. Strengthen `/dog-walking-software-uk` with app language, FAQ, and more proof
