@@ -151,7 +151,7 @@ What to improve:
 - align the social title and description with the improved contact-page positioning
 - consolidate the route so search signals are not split
 
-### 8. Blog And Legacy Route Decision
+### 8. Blog
 
 Why:
 - Search Console shows impressions for:
@@ -160,10 +160,12 @@ Why:
 - `/blog/dog-walking-invoicing-how-to-invoice-clients-properly`
 - `/blog/moving-from-spreadsheets-to-proper-dog-walking-software`
 
+Decision: these are LIVE strategic assets. Real blog content exists at all four URLs. Do NOT redirect them.
+
 What to improve:
-- decide whether these routes are live strategic assets or old URLs that need redirects
-- if they are strategic, rebuild them properly and link them into the commercial funnel
-- if they are legacy, redirect them intentionally instead of letting them drift
+- strengthen internal links from blog posts into the commercial funnel
+- ensure each blog post has a relevant CTA pointing to the most relevant landing page
+- keep blog/index.html updated as new posts are added
 
 ## Recommended Build Order
 
