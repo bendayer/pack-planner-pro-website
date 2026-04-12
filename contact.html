@@ -260,13 +260,13 @@
 ══════════════════════════════════ -->
 <header style="background:rgba(247,245,239,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #E4E6EF;position:fixed;inset:0 0 auto 0;" class="w-full z-50 shadow-sm">
   <nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-    <a href="index.html" style="text-decoration:none;display:block;">
+    <a href="/" style="text-decoration:none;display:block;">
       <img src="assits/main_logo.png" alt="Pack Planner Pro" height="40" style="height:40px;width:auto;display:block;">
     </a>
     <div class="hidden md:flex items-center space-x-8">
-      <a class="nav-link" href="index.html#features">Features</a>
-      <a class="nav-link" href="index.html#pricing">Pricing</a>
-      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="/#features">Features</a>
+      <a class="nav-link" href="/#pricing">Pricing</a>
+      <a class="nav-link" href="/#about">About</a>
       <a class="nav-link" href="/blog">Blog</a>
       <a class="nav-link-active" href="/contact" aria-current="page">Contact</a>
     </div>
@@ -276,18 +276,18 @@
         <span style="display:block;width:22px;height:2px;background:#1A1C2C;border-radius:2px;"></span>
         <span style="display:block;width:22px;height:2px;background:#1A1C2C;border-radius:2px;"></span>
       </button>
-      <a href="index.html#pricing" class="hidden sm:inline-block btn-cta px-5 py-2.5 text-sm">
+      <a href="/#pricing" class="hidden sm:inline-block btn-cta px-5 py-2.5 text-sm">
         Get Pack Planner Pro · £79
       </a>
     </div>
   </nav>
   <div id="mobile-menu" role="navigation" aria-label="Mobile menu">
-    <a class="mob-link" href="index.html#features" onclick="document.getElementById('mobile-menu').classList.remove('open');">Features</a>
-    <a class="mob-link" href="index.html#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open');">Pricing</a>
-    <a class="mob-link" href="index.html#about" onclick="document.getElementById('mobile-menu').classList.remove('open');">About</a>
+    <a class="mob-link" href="/#features" onclick="document.getElementById('mobile-menu').classList.remove('open');">Features</a>
+    <a class="mob-link" href="/#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open');">Pricing</a>
+    <a class="mob-link" href="/#about" onclick="document.getElementById('mobile-menu').classList.remove('open');">About</a>
     <a class="mob-link" href="/blog" onclick="document.getElementById('mobile-menu').classList.remove('open');">Blog</a>
     <a class="mob-link" href="/contact" onclick="document.getElementById('mobile-menu').classList.remove('open');">Contact</a>
-    <a class="mob-cta" href="index.html#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open');">Get Pack Planner Pro · £79</a>
+    <a class="mob-cta" href="/#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open');">Get Pack Planner Pro · £79</a>
   </div>
 </header>
 
@@ -460,9 +460,9 @@
       <div class="text-sm" style="color:#444653;">By Jennie's Positive Paws</div>
     </div>
     <div class="flex items-center gap-8 text-sm font-medium" style="color:#444653;">
-      <a href="index.html#features" style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Features</a>
-      <a href="index.html#pricing"  style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Pricing</a>
-      <a href="index.html#about"    style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">About</a>
+      <a href="/#features" style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Features</a>
+      <a href="/#pricing"  style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Pricing</a>
+      <a href="/#about"    style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">About</a>
       <a href="/blog" style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Blog</a>
       <a href="/contact" style="color:#0033A0;font-weight:700;">Contact</a>
       <a href="/privacy" style="color:#444653;" onmouseover="this.style.color='#0033A0'" onmouseout="this.style.color='#444653'">Privacy</a>
@@ -618,6 +618,10 @@
         pppTrack('ppp_contact_submit_success', {
           page_path: window.location.pathname,
           role: role
+        });
+        pppTrack('generate_lead', {
+          currency: 'GBP',
+          value: 79
         });
       } else {
         formStatus.textContent = 'Something went wrong. Please email us directly.';

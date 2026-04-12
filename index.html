@@ -201,26 +201,6 @@
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.packplannerpro.co.uk"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Pack Planner Pro",
-      "item": "https://www.packplannerpro.co.uk"
-    }
-  ]
-}
-</script>
 
 <!-- ── Performance: Font preconnect ── -->
 <!-- ── Favicon ── -->
@@ -2488,6 +2468,7 @@ document.addEventListener('click', function (event) {
 
   if (href.indexOf('payhip.com/b/XylDm') !== -1) {
     pppTrack('ppp_purchase_click', payload);
+    pppTrack('begin_checkout', { currency: 'GBP', value: 79 });
   } else if (href.indexOf('#pricing') !== -1 || href.indexOf('/index.html#pricing') !== -1) {
     pppTrack('ppp_pricing_cta_click', payload);
   } else if (href.indexOf('/contact') !== -1 || href.indexOf('contact.html') !== -1) {
