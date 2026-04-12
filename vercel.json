@@ -7,11 +7,7 @@
       ],
       "destination": "https://www.packplannerpro.co.uk/$1",
       "permanent": true
-    },
-    { "source": "/blog", "destination": "/dog-walking-software-uk", "permanent": true },
-    { "source": "/blog/how-to-organise-your-dog-walking-schedule", "destination": "/dog-walking-scheduling-software", "permanent": true },
-    { "source": "/blog/dog-walking-invoicing-how-to-invoice-clients-properly", "destination": "/dog-walking-software-for-sole-traders", "permanent": true },
-    { "source": "/blog/moving-from-spreadsheets-to-proper-dog-walking-software", "destination": "/dog-walking-software-uk", "permanent": true }
+    }
   ],
   "rewrites": [
     { "source": "/contact", "destination": "/contact.html" },
