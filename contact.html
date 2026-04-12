@@ -240,11 +240,14 @@
 <script src="/scripts/cookie-consent.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD5MNET36T"></script>
 <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-DD5MNET36T');
 
   function pppTrack(eventName, params) {
     if (typeof gtag === 'function') {
+      console.log('GA event fired:', eventName, params || {});
       gtag('event', eventName, params || {});
     }
   }
