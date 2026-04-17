@@ -48,6 +48,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Broad UK page FAQ and workflow pass** - completed. `/dog-walking-software-uk` now includes a clearer week-to-week workflow section, broader visible FAQs around features and staff scheduling, and a less sole-trader-only FAQ framing.
 
+**Sole trader page solo-operator pass** - completed. `/dog-walking-software-for-sole-traders` now uses a more explicit running-it-alone angle in the metadata and hero copy, adds concrete solo-use-case examples, and expands FAQ coverage around one-person setup and setup time.
+
 ---
 
 ## Site Snapshot
@@ -126,9 +128,9 @@ Why: position ~14 with 0 clicks. Needs sharper differentiation and a more compel
 Actions:
 - Lead with the solo operator's specific problem — admin overload, doing everything alone
 - Highlight no per-user fees, simple setup, no technical complexity
-- Add a "what solo dog walkers use it for" section with specific examples
-- Add FAQ entries: is this suitable for one person, can I use it without staff, how long does setup take
-- Improve the meta description to reflect the solo-operator angle directly
+- ~~Add a "what solo dog walkers use it for" section with specific examples~~ - **DONE 2026-04-17**
+- ~~Add FAQ entries: is this suitable for one person, can I use it without staff, how long does setup take~~ - **DONE 2026-04-17**
+- ~~Improve the meta description to reflect the solo-operator angle directly~~ - **DONE 2026-04-17**
 
 ### 4. `/dog-walking-scheduling-software` — feature proof push
 
