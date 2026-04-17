@@ -56,6 +56,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Homepage message and comparison pass** - completed. The homepage now uses stronger app-and-software language, tighter first-screen positioning for UK dog walkers and pet care teams, a clearer buy-once objection-handling block near pricing, and broader comparison-focused FAQ coverage.
 
+**OG image asset fix** - completed. Added a real `assets/og-image.png` file so the commercial pages and privacy page no longer point to a missing social-preview asset.
+
 ---
 
 ## Site Snapshot
@@ -88,9 +90,9 @@ What to do: choose one route, align canonical, sitemap, OG URL, schema, and inte
 
 ### 3. Social image
 
-Why: `/assets/og-image.png` is referenced across all pages but the file does not exist
+Why: `/assets/og-image.png` was referenced across several pages but the file did not exist
 
-What to do: create a real OG image asset and update all references
+What to do: ~~create a real OG image asset and update all references~~ - **DONE 2026-04-17**
 
 ### 4. Asset-folder naming consistency
 
