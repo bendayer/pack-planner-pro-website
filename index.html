@@ -377,6 +377,36 @@
   .reveal-scale { transform: translateY(24px) scale(0.97); }
   .reveal.in    { opacity: 1; transform: none; }
 
+  @media (max-width: 767px) {
+    .reveal,
+    .reveal.in,
+    .tbl-row,
+    .tbl-row.in,
+    .tbl-callout,
+    .tbl-callout.in {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .tbl-icon {
+      transform: scale(1) !important;
+    }
+
+    .tbl-icon.pop,
+    .orb-inner,
+    .badge-dot,
+    .badge-nosub .psd,
+    .fc-thumb * {
+      animation: none !important;
+    }
+
+    #ppp-demo-label {
+      opacity: 1 !important;
+      transition: none !important;
+    }
+  }
+
   /* ── Respect reduced motion ── */
   @media (prefers-reduced-motion: reduce) {
     .reveal,
@@ -2011,7 +2041,7 @@
   </ul>
 </section>
 
-<script>
+<script type="application/json" data-homepage-effects-disabled="parallax-reveal-countups">
 (function () {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var lowMotionMode = reducedMotion || window.matchMedia('(max-width: 767px)').matches;
@@ -2102,7 +2132,7 @@
 })();
 </script>
 
-<script id="table-anim">
+<script id="table-anim" type="application/json" data-homepage-effects-disabled="comparison-table">
 (function () {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var lowMotionMode = reducedMotion || window.matchMedia('(max-width: 767px)').matches;
@@ -2199,7 +2229,7 @@
 </script>
 
 <!-- ── Animated Hero Demo ────────────────────────────── -->
-<script>
+<script type="application/json" data-homepage-effects-disabled="hero-demo">
 (function () {
   'use strict';
   if (window.matchMedia('(prefers-reduced-motion:reduce)').matches || window.matchMedia('(max-width: 767px)').matches) return;
@@ -2402,6 +2432,37 @@
     });
   }, { threshold: 0.3 });
   obs.observe(screen);
+})();
+</script>
+
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(min-width: 768px)').matches) return;
+
+  function loadHomepageEffects() {
+    if (document.querySelector('script[data-homepage-effects]')) return;
+
+    var script = document.createElement('script');
+    script.src = '/scripts/homepage-effects.js';
+    script.async = true;
+    script.setAttribute('data-homepage-effects', 'true');
+    document.body.appendChild(script);
+  }
+
+  function scheduleLoad() {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadHomepageEffects, { timeout: 900 });
+    } else {
+      setTimeout(loadHomepageEffects, 180);
+    }
+  }
+
+  if (document.readyState === 'complete') {
+    scheduleLoad();
+  } else {
+    window.addEventListener('load', scheduleLoad, { once: true });
+  }
 })();
 </script>
 
