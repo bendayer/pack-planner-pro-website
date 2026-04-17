@@ -54,6 +54,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **No-subscription page conversion pass** - completed. `/dog-walking-software-no-monthly-fee` now has clearer long-term savings proof, stronger no-subscription wording, added objection-handling near pricing, and broader FAQ coverage around subscriptions and tier lock-in.
 
+**Homepage message and comparison pass** - completed. The homepage now uses stronger app-and-software language, tighter first-screen positioning for UK dog walkers and pet care teams, a clearer buy-once objection-handling block near pricing, and broader comparison-focused FAQ coverage.
+
 ---
 
 ## Site Snapshot
@@ -151,12 +153,12 @@ Actions:
 Why: the homepage absorbs brand and broad category intent. It should also set the comparison framing that supports all the landing pages.
 
 Actions:
-- Add "app" and "software" language — use both
-- Sharpen the 5-second message: what it is, who it is for, why it is different from subscription tools
-- Add a short comparison or objection-handling block near the CTA
-- Add FAQ section using the comparison queries from the keyword roadmap
+- ~~Add "app" and "software" language — use both~~ - **DONE 2026-04-17**
+- ~~Sharpen the 5-second message: what it is, who it is for, why it is different from subscription tools~~ - **DONE 2026-04-17**
+- ~~Add a short comparison or objection-handling block near the CTA~~ - **DONE 2026-04-17**
+- ~~Add FAQ section using the comparison queries from the keyword roadmap~~ - **DONE 2026-04-17**
 - Keep one dominant CTA path above the fold
-- Add a simple 3-step how it works section
+- ~~Add a simple 3-step how it works section~~ - **DONE 2026-04-17**
 
 ### 6. `/pet-care-software` — intent clarification
 
