@@ -161,6 +161,25 @@ Observed route issues:
 - both `/contact.html` and `/contact` appearing in Search Console
 - blog routes appearing — treat as live assets, not redirect targets
 
+Additional signals from the April 17, 2026 export:
+
+Observed query signals:
+- `dog walker software`
+- `pet care software`
+- `pet sitting software uk`
+- `dog walking diary`
+
+Observed page performance:
+- `/blog/dog-walking-invoicing-how-to-invoice-clients-properly` — position `7`, `1` click, `16` impressions — first clear blog winner
+- `/blog/how-to-organise-your-dog-walking-schedule` — position `7.07`, `0` clicks, `14` impressions — live CTR opportunity
+- `/pet-care-software` — `14` impressions at position `68.64` — broad demand exists, but the page intent is still weak
+- `/dog-walking-software-no-monthly-fee` — `1` impression at position `3` — keep strengthening the current angle
+
+Read:
+- add `dog walker software` language alongside `dog walking software` on the broad commercial pages
+- use the scheduling blog to absorb `dog walking diary` phrasing naturally
+- monitor whether `pet sitting software uk` repeats before deciding on a dedicated page or a stronger subsection inside `pet-care-software`
+
 ---
 
 ## New Page Decision Rules

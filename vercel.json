@@ -7,6 +7,11 @@
       ],
       "destination": "https://www.packplannerpro.co.uk/$1",
       "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
     }
   ],
   "rewrites": [

@@ -238,6 +238,127 @@ What to look for:
 Main output:
 - conversion-focused copy and structure improvements
 
+### Module 7: Page Quality Audit (E-E-A-T Framework)
+
+Purpose:
+- score each landing page against the same criteria Google uses to judge page quality
+- produce a consistent, comparable audit output for every page
+- give a clear decision on what to fix and in what order
+
+This module is adapted from the Google Quality Rater framework. Use it when doing a deep review of any commercial or landing page, not a quick title pass.
+
+#### Scoring dimensions
+
+Score each on a 1–10 scale.
+
+**Page Quality (PQ)**
+Does the page deliver genuinely useful, accurate information for its claimed intent?
+- 1–4: thin, generic, or misleading
+- 5–7: relevant but missing proof, depth, or clarity
+- 8–10: clearly the best answer for this intent
+
+**Needs Met (NM)**
+Does the page satisfy what someone searching for this query actually wants to find?
+- 1–5: wrong intent match or too vague
+- 6–7: roughly matches but misses key sub-intents
+- 8–10: answers the query directly and completely
+
+**E-E-A-T**
+
+| Dimension | What it means for Pack Planner Pro | Score 1–10 |
+|---|---|---|
+| Experience | Real product screenshots, real workflow examples, real-world use cases from actual dog walkers | — |
+| Expertise | Business knowledge specific to dog walking and pet care — not generic SaaS copy | — |
+| Authoritativeness | Clear brand identity, consistent product name and positioning, citations or references where relevant | — |
+| Trustworthiness | Contact details visible, privacy policy linked, pricing transparent, no dark patterns | — |
+
+**UX**
+Can a visitor quickly understand what the page is about, who it is for, and what to do next?
+- 1–4: confusing layout, buried CTA, slow or broken elements
+- 5–7: functional but not optimised
+- 8–10: clear 5-second scan test pass, CTA visible above the fold
+
+#### Per-page audit output format
+
+Use this template for every page audited under this module.
+
+```
+URL: /page-slug
+Target keyword: primary keyword here
+Intent type: Informational | Transactional | Commercial Investigation | Navigational
+
+Scores:
+- Page Quality (PQ): X/10
+- Needs Met (NM): X/10
+- Experience: X/10
+- Expertise: X/10
+- Authoritativeness: X/10
+- Trustworthiness: X/10
+- UX: X/10
+
+Key issues:
+- issue 1
+- issue 2
+
+Quick wins (no new content needed):
+- fix 1
+- fix 2
+
+Deep fixes (copy, structure, or proof needed):
+- fix 1
+- fix 2
+
+Content gaps:
+- what is present elsewhere in the SERP that this page is missing
+```
+
+#### Decision logic
+
+Apply these rules in order after scoring:
+
+1. If PQ < 5 → rewrite the page before any other optimisation
+2. If NM < 6 → fix intent match first — right audience, right problem framing — before adding content
+3. If Trustworthiness < 6 → add real proof before driving more paid or organic traffic to the page
+4. If Experience < 6 → add real screenshots, workflow walkthroughs, or specific use cases
+5. If UX < 6 → fix structure and CTA visibility before tackling content depth
+6. If all scores are 6+ → move to keyword and copy optimisation (Phase 1 actions)
+
+#### Intent classification rule
+
+Classify the page's primary intent before scoring:
+
+- **Transactional** — visitor wants to buy or try now (homepage, no-monthly-fee, sole-traders)
+- **Commercial Investigation** — visitor is comparing options before buying (best-of, comparison, no-subscription)
+- **Informational** — visitor wants to understand something (blog posts, FAQ pages)
+- **Navigational** — visitor already knows the brand and wants to find it (contact, privacy)
+
+If the page's content does not match its intent classification, Needs Met will always be low regardless of copy quality.
+
+#### Red flags for Pack Planner Pro specifically
+
+These are the most common quality gaps in small software product sites. Check for all of them.
+
+- Generic SaaS copy that could describe any software product — no dog walking specificity
+- Feature bullets without proof that the feature works or is genuinely useful
+- No real product screenshots on a transactional page
+- Pricing buried or hard to find
+- No testimonials, case studies, or named users
+- No trust signals near the buy button
+- FAQ section that does not address real comparison or objection queries
+- Intent mismatch — scheduling page used to push broad "best software" traffic
+
+#### Keyword optimisation checklist
+
+Run this after E-E-A-T scoring passes. Only do keyword work on pages with PQ ≥ 6 and NM ≥ 6.
+
+- Primary keyword appears in the title tag
+- Primary keyword appears in the H1
+- Primary keyword or close variant appears in the first 100 words of visible copy
+- Meta description reflects the page intent, not just the brand name
+- 2–5 relevant internal links from this page to related commercial pages
+- At least one inbound internal link from another page pointing here
+- FAQ section uses real search query phrasing, not invented questions
+
 ## 6. Current Page Set
 
 ### Core pages
@@ -455,3 +576,4 @@ Use the data to prioritise work in this order:
 - Reframed the system from local service SEO to UK software SEO
 - Added folder structure, reporting workflow, prompt library, and module-based review process
 - Added Pack Planner Pro-specific technical guardrails around host consistency, route consistency, and broken social-image paths
+- Added Module 7: Page Quality Audit with E-E-A-T scoring, per-page audit output template, decision logic, intent classification, PPP-specific red flags, and keyword optimisation checklist — adapted from the Google Quality Rater framework

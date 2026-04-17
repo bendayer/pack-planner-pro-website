@@ -108,7 +108,8 @@
 <link rel="preload" as="style" href="../../styles/tailwind.css"/>
 <link rel="stylesheet" href="../../styles/tailwind.css"/>
 <link rel="stylesheet" href="../../styles/blog.css"/>
-<link rel="stylesheet" href="../../styles/cookie-consent.css"/>
+<link rel="preload" as="style" href="../../styles/cookie-consent.css" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="../../styles/cookie-consent.css"/></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD5MNET36T"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -117,7 +118,7 @@
   gtag('js', new Date());
   gtag('config', 'G-DD5MNET36T', { send_page_view: true });
 </script>
-<script src="../../scripts/cookie-consent.js"></script>
+<script defer src="../../scripts/cookie-consent.js"></script>
 <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>

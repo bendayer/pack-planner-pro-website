@@ -218,7 +218,8 @@
 
 <link rel="preload" as="style" href="/styles/tailwind.css"/>
 <link rel="stylesheet" href="/styles/tailwind.css"/>
-<link rel="stylesheet" href="/styles/cookie-consent.css"/>
+<link rel="preload" as="style" href="/styles/cookie-consent.css" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="/styles/cookie-consent.css"/></noscript>
 <style>
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -623,7 +624,7 @@
     }
   }
 </script>
-<script src="/scripts/cookie-consent.js"></script>
+<script defer src="/scripts/cookie-consent.js"></script>
 <!-- Vercel Speed Insights -->
 <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
@@ -2013,11 +2014,12 @@
 <script>
 (function () {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lowMotionMode = reducedMotion || window.matchMedia('(max-width: 767px)').matches;
 
   /* ══════════════════════════════════════
      1. PARALLAX GRADIENT ORBS
   ══════════════════════════════════════ */
-  if (!reducedMotion) {
+  if (!lowMotionMode) {
     var wrap1 = document.getElementById('orb-1-wrap');
     var wrap2 = document.getElementById('orb-2-wrap');
     var wrap3 = document.getElementById('orb-3-wrap');
@@ -2042,7 +2044,7 @@
   ══════════════════════════════════════ */
   var reveals = document.querySelectorAll('.reveal');
 
-  if (reducedMotion) {
+  if (lowMotionMode) {
     reveals.forEach(function (el) { el.classList.add('in'); });
   } else {
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -2085,7 +2087,7 @@
     requestAnimationFrame(tick);
   }
 
-  if (reducedMotion) return; // leave static text as-is
+  if (lowMotionMode) return; // leave static text as-is
 
   var countObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -2103,6 +2105,7 @@
 <script id="table-anim">
 (function () {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lowMotionMode = reducedMotion || window.matchMedia('(max-width: 767px)').matches;
 
   var tableWrap = document.getElementById('cmp-table-wrap');
   var rows      = document.querySelectorAll('[data-table-row]');
@@ -2110,7 +2113,7 @@
 
   /* In reduced-motion mode the CSS media query already makes everything visible —
      just add .in to rows/callout so no JS-dependent classes are missing. */
-  if (reducedMotion) {
+  if (lowMotionMode) {
     rows.forEach(function (r) { r.classList.add('in'); });
     if (callout) callout.classList.add('in');
     return;
@@ -2199,7 +2202,7 @@
 <script>
 (function () {
   'use strict';
-  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches || window.matchMedia('(max-width: 767px)').matches) return;
 
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
@@ -2420,7 +2423,7 @@ function pppToggleFaq(item) {
 
 /* ── Stat Strip Count-Up (data-statup) ── */
 (function () {
-  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches || window.matchMedia('(max-width: 767px)').matches) return;
 
   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 

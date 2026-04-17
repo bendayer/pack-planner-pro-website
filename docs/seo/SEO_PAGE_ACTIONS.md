@@ -2,7 +2,7 @@
 
 This file translates the current repo state, GA4 data, Search Console data, and keyword research into a prioritised action queue.
 
-Last updated: 2026-04-12
+Last updated: 2026-04-17
 
 ---
 
@@ -25,6 +25,21 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Keyword roadmap** — rebuilt at `docs/seo/KEYWORD_ROADMAP.md`. Added tier structure, app vs software insight, comparison segment, FAQ keyword targets, blog keyword targets, and data-gated future page criteria.
 
+### 2026-04-17
+
+**Weekly data ingest** — completed. Saved the latest raw inputs in:
+- `data/ga4/ga4-reports-snapshot-2026-04-17.csv`
+- `data/search-console/packplannerpro-performance-on-search-2026-04-17.zip`
+- extracted Search Console CSVs dated `2026-04-17`
+
+**Weekly findings** — saved at `reports/ad-hoc/seo-weekly-check-2026-04-17.md`.
+
+**New read from this week's data** — blog pages are now driving the clearest organic visibility. The invoicing post produced the week's only organic click, and the scheduling post is sitting near position 7 with zero clicks, which makes it the clearest CTR opportunity outside the main commercial pages.
+
+**Scheduling blog snippet pass** — completed. Updated the title, meta description, OG title and description, and Twitter title and description in `blog/how-to-organise-your-dog-walking-schedule/index.html` to target CTR more directly and pick up the new `dog walking diary` phrasing.
+
+**Contact route consolidation** — completed in routing. Added a permanent redirect from `/contact.html` to `/contact` in `vercel.json` so the clean route is the only public SEO target, while `/contact` continues to rewrite to `contact.html` internally.
+
 ---
 
 ## Site Snapshot
@@ -36,6 +51,8 @@ This section records what has been shipped so a new agent can pick up without re
 - GA4 is now tracking page views and events
 - Contact form is fixed and tracking generate_lead events
 - Buy-button events (begin_checkout, ppp_purchase_click) are now firing with event_callback
+- This week's strongest search visibility sits on the blog, especially the invoicing and scheduling posts
+- `/pet-care-software` is attracting broader impressions but still looks weak against that intent
 
 ---
 
@@ -58,6 +75,12 @@ What to do: choose one route, align canonical, sitemap, OG URL, schema, and inte
 Why: `/assets/og-image.png` is referenced across all pages but the file does not exist
 
 What to do: create a real OG image asset and update all references
+
+### 4. Asset-folder naming consistency
+
+Why: the blog images currently live under `/assits/`, and there is no `/assets/` folder in the repo
+
+What to do: if the folder is renamed later, update blog metadata and image references in one coordinated pass
 
 ---
 
@@ -129,6 +152,17 @@ Actions:
 - If staying broad: make the pet-care angle genuinely different from the homepage
 - If narrowing: add dog training and pet-sitting specific language
 
+### 7. Ranking blog posts — CTR and internal-link priority
+
+Why: this week's Search Console data shows blog posts are now generating the clearest visibility. The invoicing post earned `1` click from `16` impressions at average position `7`, and the scheduling post earned `14` impressions at average position `7.07` with `0` clicks.
+
+Actions:
+- ~~tighten title and meta-description language on the scheduling post first~~ — **DONE 2026-04-17**
+- add clearer in-content CTA blocks that point to the matching commercial pages
+- make sure the scheduling post pushes readers to `/dog-walking-scheduling-software`
+- make sure the invoicing post pushes readers to the homepage, contact page, or the best-fit commercial page
+- consider adding "dog walking diary" language naturally into the scheduling post because it has started appearing in Search Console
+
 ---
 
 ## Phase 2 — FAQ Layer Across All Pages
@@ -161,6 +195,7 @@ Actions:
 - `/invoicing` → link to homepage or contact
 - `/moving-from-spreadsheets` → link to `/dog-walking-software-no-monthly-fee`
 - Update `blog/index.html` when new posts are added
+- Move this phase forward in priority because the blog is now earning real search visibility
 
 New blog posts to consider (based on keyword research):
 - How to start a dog walking business UK → broad top-of-funnel, links to homepage
@@ -190,6 +225,19 @@ Build when: Search Console shows offline-specific demand. This is a strong USP a
 ---
 
 ## Current Highest-Priority Actions (April 2026)
+
+Updated order from the 2026-04-17 data:
+
+1. ~~Fix contact route and canonical consistency~~ — **DONE 2026-04-17**
+2. Create the OG image asset
+3. Strengthen blog CTAs to commercial pages, especially the invoicing and scheduling posts
+4. Strengthen `/dog-walking-software-uk` with app language, FAQ, and more proof
+5. Clarify the intent angle of `/pet-care-software`
+6. Keep building out the no-subscription page with comparison and objection-handling copy
+7. Add FAQ sections across all five landing pages
+8. Collect a wider Search Console export (28 days or 3 months) before making any new page decisions
+
+Earlier order from April 12:
 
 1. ~~Rewrite title and meta for `/dog-walking-software-no-monthly-fee`~~ — **DONE 2026-04-12**
    - Title: `Dog Walking Software No Monthly Fee | £79 One-Time Purchase`

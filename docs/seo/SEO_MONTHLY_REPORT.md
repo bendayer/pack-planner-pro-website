@@ -9,8 +9,11 @@ Reporting inputs used in this update:
 
 Supporting files saved in repo:
 - `data/ga4/ga4-reports-snapshot-2026-04-12.csv`
+- `data/ga4/ga4-reports-snapshot-2026-04-17.csv`
 - `data/search-console/packplannerpro-performance-on-search-2026-04-12.zip`
+- `data/search-console/packplannerpro-performance-on-search-2026-04-17.zip`
 - extracted Search Console CSVs dated `2026-04-12`
+- extracted Search Console CSVs dated `2026-04-17`
 
 ## Executive Summary
 
@@ -40,7 +43,7 @@ The current picture is:
 
 ### Excluded file
 - `https___jenniespositivepaws.com_-Performance-on-Search-2026-04-12.zip`
-- this is JPP data and must not be mixed into Pack Planner Pro reporting
+- this is JPP data and  must not be mixed into Pack Planner Pro reporting
 
 ## GA4 Snapshot
 
@@ -302,3 +305,42 @@ The repo plus GA4 plus Search Console point to six main priorities.
 1. Implement the contact-route fix and metadata cleanup.
 2. Implement GA4 key-event tracking for the main conversion actions.
 3. Apply the first conversion and SEO refresh to the homepage, `dog-walking-software-uk`, `dog-walking-software-no-monthly-fee`, and contact page.
+
+## Mid-Month Update: 2026-04-17
+
+Additional inputs used for this update:
+- GA4 snapshot for `https://www.packplannerpro.co.uk/` covering April 10, 2026 to April 16, 2026
+- Search Console export generated on April 17, 2026
+- Search Console chart rows in the export covering April 9, 2026 to April 15, 2026
+
+### Mid-month headline read
+
+The site has broadened its search footprint, but the strongest visibility this week sits on blog content rather than the core commercial pages.
+
+- Search Console totals in the export show `1` click from `62` impressions
+- United Kingdom remains the main market with `53` impressions and `1` click
+- GA4 shows `9` sessions from `google / organic` in the April 10 to April 16 window
+- direct traffic still leads with `17` sessions in the same GA4 window
+
+### Mid-month page movement
+
+- `/blog/dog-walking-invoicing-how-to-invoice-clients-properly`: `1` click, `16` impressions, average position `7`
+- `/blog/how-to-organise-your-dog-walking-schedule`: `0` clicks, `14` impressions, average position `7.07`
+- `/pet-care-software`: `0` clicks, `14` impressions, average position `68.64`
+- `/dog-walking-software-uk`: `0` clicks, `10` impressions, average position `53.2`
+- `/dog-walking-software-no-monthly-fee`: `0` clicks, `1` impression, average position `3`
+
+### What this changes
+
+- blog internal linking and CTA placement now matter more because the blog is earning real visibility
+- the scheduling blog is now a live CTR opportunity because it is sitting near position `7` with no clicks
+- `pet-care-software` is attracting broader category impressions, but the page still looks too weak or too broad for that intent
+- the no-subscription page still looks strategically valid when it appears
+- the `dog-walking-software-uk` drop in this small export should be treated as volatility, not a confirmed trend
+
+### New actions added from the April 17 data
+
+1. Tighten snippet and CTA work on the two ranking blog posts.
+2. Clarify the intent and copy direction of `pet-care-software`.
+3. Keep strengthening the core commercial pages, but avoid making large strategy changes from a tiny 7-day sample.
+4. Keep blog social-image paths consistent with the current `/assits/` folder naming unless the folder is deliberately renamed everywhere together.
