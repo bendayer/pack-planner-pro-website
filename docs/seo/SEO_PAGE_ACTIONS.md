@@ -44,6 +44,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Pet-care page angle pass** — completed. `/pet-care-software` is now positioned more clearly as the page for mixed-service pet care businesses that need one desktop system across dog walking, training, grooming, and pop-in work, rather than reading like a second homepage.
 
+**Broad UK page message pass** — completed. `/dog-walking-software-uk` now uses stronger app-and-software language, a clearer broad UK dog walker angle, and more explicit "this page is for you if" audience framing.
+
 ---
 
 ## Site Snapshot
@@ -108,8 +110,8 @@ Why: the clearest near-page-1 opportunity. Position ~11 with 1 click and 11 impr
 
 Actions:
 - Strengthen as the clearest answer for broad UK dog walking software intent
-- Add "app" language alongside "software" — both terms are searched
-- Add a "this is for you if" section targeting UK dog walkers and pet-care operators
+- ~~Add "app" language alongside "software" — both terms are searched~~ — **DONE 2026-04-17**
+- ~~Add a "this is for you if" section targeting UK dog walkers and pet-care operators~~ — **DONE 2026-04-17**
 - Strengthen with screenshots, workflow examples, and real feature proof
 - Add FAQ section covering: best dog walking software UK, what features do dog walkers need, does it work offline
 - Keep the angle broader than the no-subscription and sole-trader pages
