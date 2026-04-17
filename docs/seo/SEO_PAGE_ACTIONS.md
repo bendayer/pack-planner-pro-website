@@ -58,6 +58,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **OG image asset fix** - completed. Added a real `assets/og-image.png` file so the commercial pages and privacy page no longer point to a missing social-preview asset.
 
+**Asset-path consistency pass** - completed. Added the active logo and screenshot files under `assets/` and switched the live site pages away from `/assits/` paths, while leaving the old folder in place temporarily as a safe fallback.
+
 ---
 
 ## Site Snapshot
@@ -96,9 +98,9 @@ What to do: ~~create a real OG image asset and update all references~~ - **DONE 
 
 ### 4. Asset-folder naming consistency
 
-Why: the blog images currently live under `/assits/`, and there is no `/assets/` folder in the repo
+Why: the blog images previously lived under `/assits/`, while newer metadata and OG references were already moving toward `/assets/`
 
-What to do: if the folder is renamed later, update blog metadata and image references in one coordinated pass
+What to do: ~~if the folder is renamed later, update blog metadata and image references in one coordinated pass~~ - **DONE 2026-04-17**
 
 ---
 
