@@ -46,6 +46,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Broad UK page message pass** — completed. `/dog-walking-software-uk` now uses stronger app-and-software language, a clearer broad UK dog walker angle, and more explicit "this page is for you if" audience framing.
 
+**Broad UK page FAQ and workflow pass** - completed. `/dog-walking-software-uk` now includes a clearer week-to-week workflow section, broader visible FAQs around features and staff scheduling, and a less sole-trader-only FAQ framing.
+
 ---
 
 ## Site Snapshot
@@ -112,8 +114,9 @@ Actions:
 - Strengthen as the clearest answer for broad UK dog walking software intent
 - ~~Add "app" language alongside "software" — both terms are searched~~ — **DONE 2026-04-17**
 - ~~Add a "this is for you if" section targeting UK dog walkers and pet-care operators~~ — **DONE 2026-04-17**
-- Strengthen with screenshots, workflow examples, and real feature proof
-- Add FAQ section covering: best dog walking software UK, what features do dog walkers need, does it work offline
+- Add screenshots of the live planner and records views
+- ~~Strengthen with workflow examples and real feature proof~~ - **DONE 2026-04-17**
+- ~~Add FAQ section covering: best dog walking software UK, what features do dog walkers need, does it work offline~~ - **DONE 2026-04-17**
 - Keep the angle broader than the no-subscription and sole-trader pages
 
 ### 3. `/dog-walking-software-for-sole-traders` — page 2 to page 1 push
