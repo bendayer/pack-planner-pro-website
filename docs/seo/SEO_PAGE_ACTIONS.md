@@ -60,6 +60,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Asset-path consistency pass** - completed. Added the active logo and screenshot files under `assets/` and switched the live site pages away from `/assits/` paths, while leaving the old folder in place temporarily as a safe fallback.
 
+**Start-up blog post pass** - completed. Added `/blog/how-to-start-a-dog-walking-business-uk`, linked it from the blog hub, and added the blog hub plus all live posts to the sitemap so the blog section is properly discoverable.
+
 ---
 
 ## Site Snapshot
@@ -219,7 +221,7 @@ Actions:
 - Move this phase forward in priority because the blog is now earning real search visibility
 
 New blog posts to consider (based on keyword research):
-- How to start a dog walking business UK → broad top-of-funnel, links to homepage
+- ~~How to start a dog walking business UK → broad top-of-funnel, links to homepage~~ - **DONE 2026-04-17**
 - Dog walking pricing guide UK → top-of-funnel, links to contact
 - Tools for dog walkers UK → comparison and product awareness
 
