@@ -62,6 +62,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Start-up blog post pass** - completed. Added `/blog/how-to-start-a-dog-walking-business-uk`, linked it from the blog hub, and added the blog hub plus all live posts to the sitemap so the blog section is properly discoverable.
 
+**Pricing blog post pass** - completed. Added `/blog/dog-walking-pricing-guide-uk`, linked it from the blog hub, and pointed the CTA path toward contact so pricing conversations can flow into real pre-sale questions.
+
 ---
 
 ## Site Snapshot
@@ -222,7 +224,7 @@ Actions:
 
 New blog posts to consider (based on keyword research):
 - ~~How to start a dog walking business UK → broad top-of-funnel, links to homepage~~ - **DONE 2026-04-17**
-- Dog walking pricing guide UK → top-of-funnel, links to contact
+- ~~Dog walking pricing guide UK → top-of-funnel, links to contact~~ - **DONE 2026-04-17**
 - Tools for dog walkers UK → comparison and product awareness
 
 ---
