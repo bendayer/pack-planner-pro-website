@@ -52,6 +52,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Scheduling page workflow pass** - completed. `/dog-walking-scheduling-software` now explains the scheduling problem more directly, adds practical week-planning examples, and aligns the FAQ language more closely with scheduling queries around seeing the week, assigning staff, and Google Calendar export.
 
+**No-subscription page conversion pass** - completed. `/dog-walking-software-no-monthly-fee` now has clearer long-term savings proof, stronger no-subscription wording, added objection-handling near pricing, and broader FAQ coverage around subscriptions and tier lock-in.
+
 ---
 
 ## Site Snapshot
