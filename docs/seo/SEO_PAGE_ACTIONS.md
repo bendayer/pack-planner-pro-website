@@ -42,6 +42,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Blog CTA/internal-link pass** — completed for the current three live posts. The scheduling post points readers to `/dog-walking-scheduling-software`, the invoicing post now pushes to the homepage/contact path, and the spreadsheets post now points to `/dog-walking-software-no-monthly-fee`.
 
+**Pet-care page angle pass** — completed. `/pet-care-software` is now positioned more clearly as the page for mixed-service pet care businesses that need one desktop system across dog walking, training, grooming, and pop-in work, rather than reading like a second homepage.
+
 ---
 
 ## Site Snapshot
@@ -150,8 +152,8 @@ Actions:
 Why: getting impressions but angle is still unclear. Decide before Search Console data accumulates on the wrong intent.
 
 Actions:
-- Decide whether the page targets a broader pet-care audience or stays tightly tied to dog walking
-- If staying broad: make the pet-care angle genuinely different from the homepage
+- ~~Decide whether the page targets a broader pet-care audience or stays tightly tied to dog walking~~ — **DONE 2026-04-17**
+- ~~If staying broad: make the pet-care angle genuinely different from the homepage~~ — **DONE 2026-04-17**
 - If narrowing: add dog training and pet-sitting specific language
 
 ### 7. Ranking blog posts — CTR and internal-link priority
