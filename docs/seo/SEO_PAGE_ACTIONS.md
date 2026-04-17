@@ -40,6 +40,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Contact route consolidation** — completed in routing. Added a permanent redirect from `/contact.html` to `/contact` in `vercel.json` so the clean route is the only public SEO target, while `/contact` continues to rewrite to `contact.html` internally.
 
+**Blog CTA/internal-link pass** — completed for the current three live posts. The scheduling post points readers to `/dog-walking-scheduling-software`, the invoicing post now pushes to the homepage/contact path, and the spreadsheets post now points to `/dog-walking-software-no-monthly-fee`.
+
 ---
 
 ## Site Snapshot
@@ -158,9 +160,9 @@ Why: this week's Search Console data shows blog posts are now generating the cle
 
 Actions:
 - ~~tighten title and meta-description language on the scheduling post first~~ — **DONE 2026-04-17**
-- add clearer in-content CTA blocks that point to the matching commercial pages
-- make sure the scheduling post pushes readers to `/dog-walking-scheduling-software`
-- make sure the invoicing post pushes readers to the homepage, contact page, or the best-fit commercial page
+- ~~add clearer in-content CTA blocks that point to the matching commercial pages~~ — **DONE 2026-04-17**
+- ~~make sure the scheduling post pushes readers to `/dog-walking-scheduling-software`~~ — **DONE 2026-04-17**
+- ~~make sure the invoicing post pushes readers to the homepage, contact page, or the best-fit commercial page~~ — **DONE 2026-04-17**
 - consider adding "dog walking diary" language naturally into the scheduling post because it has started appearing in Search Console
 
 ---
@@ -191,9 +193,9 @@ Three blog posts are already live and collecting impressions:
 
 Actions:
 - Every blog post should have a clear CTA pointing to the most relevant commercial page
-- `/how-to-organise` → link to `/dog-walking-scheduling-software`
-- `/invoicing` → link to homepage or contact
-- `/moving-from-spreadsheets` → link to `/dog-walking-software-no-monthly-fee`
+- ~~`/how-to-organise` → link to `/dog-walking-scheduling-software`~~ — **DONE 2026-04-17**
+- ~~`/invoicing` → link to homepage or contact~~ — **DONE 2026-04-17**
+- ~~`/moving-from-spreadsheets` → link to `/dog-walking-software-no-monthly-fee`~~ — **DONE 2026-04-17**
 - Update `blog/index.html` when new posts are added
 - Move this phase forward in priority because the blog is now earning real search visibility
 
