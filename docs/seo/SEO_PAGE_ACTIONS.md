@@ -64,6 +64,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Pricing blog post pass** - completed. Added `/blog/dog-walking-pricing-guide-uk`, linked it from the blog hub, and pointed the CTA path toward contact so pricing conversations can flow into real pre-sale questions.
 
+**Tools blog post pass** - completed. Added `/blog/tools-for-dog-walkers-uk`, linked it from the blog hub, and pointed the CTA path toward `/dog-walking-software-uk` so comparison-style traffic can flow into the broad commercial page.
+
 ---
 
 ## Site Snapshot
@@ -225,7 +227,7 @@ Actions:
 New blog posts to consider (based on keyword research):
 - ~~How to start a dog walking business UK → broad top-of-funnel, links to homepage~~ - **DONE 2026-04-17**
 - ~~Dog walking pricing guide UK → top-of-funnel, links to contact~~ - **DONE 2026-04-17**
-- Tools for dog walkers UK → comparison and product awareness
+- ~~Tools for dog walkers UK → comparison and product awareness~~ - **DONE 2026-04-18**
 
 ---
 
