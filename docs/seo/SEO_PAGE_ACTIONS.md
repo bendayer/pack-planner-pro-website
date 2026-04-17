@@ -50,6 +50,8 @@ This section records what has been shipped so a new agent can pick up without re
 
 **Sole trader page solo-operator pass** - completed. `/dog-walking-software-for-sole-traders` now uses a more explicit running-it-alone angle in the metadata and hero copy, adds concrete solo-use-case examples, and expands FAQ coverage around one-person setup and setup time.
 
+**Scheduling page workflow pass** - completed. `/dog-walking-scheduling-software` now explains the scheduling problem more directly, adds practical week-planning examples, and aligns the FAQ language more closely with scheduling queries around seeing the week, assigning staff, and Google Calendar export.
+
 ---
 
 ## Site Snapshot
@@ -138,9 +140,9 @@ Why: position ~36 with 1 click and 9 impressions. Weak position means the page i
 
 Actions:
 - Lead with the scheduling problem before feature detail
-- Add a step-by-step explanation of how scheduling works in practice
-- Use screenshots and examples tied to weekly planning and calendar export
-- Add scheduling-specific FAQs: can I see the whole week at once, can I assign walks to staff, does it export to Google Calendar
+- ~~Add a step-by-step explanation of how scheduling works in practice~~ - **DONE 2026-04-17**
+- ~~Use screenshots and examples tied to weekly planning and calendar export~~ - **DONE 2026-04-17**
+- ~~Add scheduling-specific FAQs: can I see the whole week at once, can I assign walks to staff, does it export to Google Calendar~~ - **DONE 2026-04-17**
 
 ### 5. Homepage — conversion and breadth improvements
 
