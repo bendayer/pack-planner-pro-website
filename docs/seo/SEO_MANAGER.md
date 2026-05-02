@@ -50,11 +50,11 @@ Every full Pack Planner Pro SEO review cycle should create or update these outpu
 | Core offer | One-time purchase software for dog walkers, dog trainers, and pet care businesses |
 | Primary market | United Kingdom |
 | Product model | Desktop app, offline-first, no subscription |
-| Canonical host | `https://packplannerpro.co.uk` until a deliberate host migration is completed |
-| Current contact route in repo | `contact.html` |
-| Preferred long-term public route | `/contact` only if redirects, canonicals, sitemap, and internal links are updated together |
+| Canonical host | `https://www.packplannerpro.co.uk` |
+| Current contact route in repo | `contact.html` served publicly through `/contact` |
+| Preferred long-term public route | `/contact` |
 | Analytics | GA4 present |
-| Search Console | Expected, but exports are not yet stored in this repo |
+| Search Console | Exports stored under `data/search-console/` |
 | Current owner entity in markup | `Jennie's Positive Paws` |
 
 ## 3. Session Start Protocol
@@ -560,10 +560,12 @@ Run this before any major indexing push or sitemap resubmission.
 - confirm social images used in metadata are real files, not stale paths
 - refresh sitemap `lastmod` dates when a broad sitewide update has been pushed
 
-### Known issues to resolve first
-- `contact.html` currently uses `.com` in canonical, OG URL, and `ContactPage` schema while the rest of the site uses `.co.uk`
-- `sitemap.xml` currently lists `https://packplannerpro.co.uk/contact.html` while metadata suggests `/contact`
-- the site points OG and Twitter images at `/assets/og-image.png`, but no such file exists in this repo
+### Recently resolved technical issues
+- Contact route is consolidated on `https://www.packplannerpro.co.uk/contact`
+- `contact.html` canonical, OG URL, and `ContactPage` schema point to `/contact`
+- `sitemap.xml` lists `https://www.packplannerpro.co.uk/contact`
+- `vercel.json` redirects `/contact.html` to `/contact` and rewrites `/contact` internally to `contact.html`
+- Social image references now point to existing site assets
 
 ## 9. Keyword Focus
 

@@ -118,15 +118,15 @@ This section records what has been shipped so a new agent can pick up without re
 
 ### 1. Canonical host cleanup
 
-Why: `contact.html` still uses `.com` in canonical, OG URL, and schema while all other pages use `.co.uk`
+Why: `contact.html` previously used the wrong host in canonical, OG URL, and schema while all other pages used `.co.uk`
 
-What to do: align contact page canonical, OG URL, and ContactPage schema to `https://packplannerpro.co.uk`
+What to do: ~~align contact page canonical, OG URL, and ContactPage schema to `https://www.packplannerpro.co.uk/contact`~~ - **DONE 2026-05-02**
 
 ### 2. Contact route consolidation
 
-Why: both `/contact.html` and `/contact` are appearing in Search Console — signal is split
+Why: both `/contact.html` and `/contact` appeared in Search Console, so the route needed one clean public target
 
-What to do: choose one route, align canonical, sitemap, OG URL, schema, and internal links
+What to do: ~~choose one route, align canonical, sitemap, OG URL, schema, internal links, and routing to `/contact`~~ - **DONE 2026-05-02**
 
 ### 3. Social image
 
@@ -306,10 +306,11 @@ Updated order from the 2026-05-02 data:
    - Keep the post that earned `3` clicks from `51` impressions working hard
    - Add a stronger product bridge or CTA without turning the article into a sales page
 
-5. Re-check contact route consistency
-   - `/contact.html` still appears separately from `/contact` in Search Console
-   - Confirm sitemap, canonical, OG URL, schema, and internal links all point to `/contact`
-   - Keep the redirect and allow time for older route data to flush
+5. ~~Re-check contact route consistency~~ - **DONE 2026-05-02**
+   - Chosen public route: `https://www.packplannerpro.co.uk/contact`
+   - Confirmed `contact.html` canonical, OG URL, ContactPage schema, sitemap, and internal links point to `/contact`
+   - `vercel.json` redirects `/contact.html` to `/contact` and rewrites `/contact` internally to `contact.html`
+   - Older `/contact.html` Search Console data may remain visible temporarily while Google refreshes
 
 Earlier order from April 12:
 
@@ -317,7 +318,7 @@ Earlier order from April 12:
    - Title: `Dog Walking Software No Monthly Fee | £79 One-Time Purchase`
    - Meta: leads with £79 price, under 155 chars, no-subscription angle
    - Remaining on this page: comparison block, FAQ section, objection-handling copy near pricing — see Phase 1 item 1
-2. Fix contact route and canonical consistency
+2. ~~Fix contact route and canonical consistency~~ - **DONE 2026-05-02**
 3. Create the OG image asset
 4. Strengthen `/dog-walking-software-uk` with app language, FAQ, and more proof
 5. Add FAQ sections across all five landing pages
