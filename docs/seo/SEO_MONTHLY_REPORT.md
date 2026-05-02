@@ -10,10 +10,12 @@ Reporting inputs used in this update:
 Supporting files saved in repo:
 - `data/ga4/ga4-reports-snapshot-2026-04-12.csv`
 - `data/ga4/ga4-reports-snapshot-2026-04-17.csv`
+- `data/ga4/ga4-reports-snapshot-2026-05-02.csv`
 - `data/search-console/packplannerpro-performance-on-search-2026-04-12.zip`
 - `data/search-console/packplannerpro-performance-on-search-2026-04-17.zip`
 - extracted Search Console CSVs dated `2026-04-12`
 - extracted Search Console CSVs dated `2026-04-17`
+- extracted Search Console CSVs dated `2026-05-02`
 
 ## Executive Summary
 
@@ -344,3 +346,48 @@ The site has broadened its search footprint, but the strongest visibility this w
 2. Clarify the intent and copy direction of `pet-care-software`.
 3. Keep strengthening the core commercial pages, but avoid making large strategy changes from a tiny 7-day sample.
 4. Keep blog social-image paths consistent with the current `/assits/` folder naming unless the folder is deliberately renamed everywhere together.
+
+## May Update: 2026-05-02
+
+Additional inputs used for this update:
+- GA4 snapshot for `https://www.packplannerpro.co.uk/` covering April 4, 2026 to May 1, 2026
+- Search Console export generated on May 2, 2026
+- Search Console chart rows in the export covering April 4, 2026 to April 30, 2026
+- Detailed report saved at `reports/ad-hoc/seo-check-2026-05-02.md`
+
+### May headline read
+
+The site is moving in the right direction. Search visibility has broadened enough that the next sprint should be based on specific page and query clusters, not generic setup work.
+
+- Search Console now shows `15` clicks from `284` impressions across the chart window
+- United Kingdom remains the main search market with `14` clicks from `212` impressions
+- GA4 shows `33` sessions from `google / organic` in the April 4 to May 1 window
+- Direct traffic still leads with `95` sessions in GA4
+- GA4 purchase/add-to-cart data is still not usable in this export because those sections are empty
+
+### May page movement
+
+- `/`: `9` clicks, `47` impressions, `19.15%` CTR, average position `6.15`
+- `/blog/dog-walking-invoicing-how-to-invoice-clients-properly`: `3` clicks, `51` impressions, average position `6.53`
+- `/dog-walking-software-uk`: `1` click, `66` impressions, average position `32.61`
+- `/blog/how-to-organise-your-dog-walking-schedule`: `1` click, `63` impressions, average position `11.02`
+- `/dog-walking-scheduling-software`: `1` click, `27` impressions, average position `18.96`
+- `/dog-walking-software-no-monthly-fee`: `0` clicks, `19` impressions, average position `10.21`
+
+### May query movement
+
+- `dog walking software`: `19` impressions, average position `69.68`
+- `dog walking software uk`: `17` impressions, average position `52.06`
+- `dog walker software`: `15` impressions, average position `62.07`
+- `dog walker schedule planning`: `13` impressions, average position `9.69`
+- `pack planner`: `2` clicks from `8` impressions, average position `3.12`
+- `dog walking calendar`: `4` impressions, average position `34.25`
+- `dog walking diary`: `1` impression, average position `11`
+
+### What this changes
+
+- `/dog-walking-software-no-monthly-fee` is now the best commercial near-win because it is close to page 1 with no clicks
+- the scheduling cluster should be treated as a combined blog-plus-landing-page opportunity
+- `/dog-walking-software-uk` should be strengthened with proof, screenshots, and internal links before any new broad software page is created
+- the invoicing blog is worth protecting and improving because it is already earning clicks
+- new page creation should stay on hold until existing pages have been strengthened and another data cycle confirms repeated demand

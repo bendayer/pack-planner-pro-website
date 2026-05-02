@@ -59,28 +59,112 @@ Every full Pack Planner Pro SEO review cycle should create or update these outpu
 
 ## 3. Session Start Protocol
 
-At the start of any Pack Planner Pro SEO session:
+At the start of any Pack Planner Pro SEO session, follow these steps in order. Do not skip to the review until Step 4 is confirmed.
 
-1. Read this file first.
-2. Read the latest:
+### Step 1 - Read context files
+
+Read these files before doing anything else:
+- `docs/seo/SEO_MANAGER.md` (this file)
 - `docs/seo/SEO_MONTHLY_REPORT.md`
 - `docs/seo/SEO_PAGE_ACTIONS.md`
 - `docs/seo/KEYWORD_ROADMAP.md`
-- any recent reports in `reports/monthly/` and `reports/ad-hoc/`
-3. Check whether new files have been dropped into:
-- `data/search-console/`
-- `data/ga4/`
-- `data/customer-voice/`
-4. Only then choose the workflow:
+- `docs/seo/SALES_CONVERSION_FRAMEWORK.md` when conversion or CTA work is involved
+- any recent files in `reports/monthly/` and `reports/ad-hoc/`
+
+---
+
+### Step 2 - Run the Data Intake Checklist
+
+Check `data/` for the following files. For each one, confirm: present and current, present but stale, or missing.
+
+**Search Console (expected: exports from the current review period)**
+
+| File | Expected | Status |
+|---|---|---|
+| `search-console-queries-YYYY-MM-DD.csv` | Queries with clicks, impressions, CTR, and position | Check date - should be within last 30 days |
+| `search-console-pages-YYYY-MM-DD.csv` | Pages with clicks, impressions, CTR, and position | Check date - should be within last 30 days |
+| `search-console-chart-YYYY-MM-DD.csv` | Daily chart with clicks and impressions over time | Check date - should be within last 30 days |
+| `search-console-devices-YYYY-MM-DD.csv` | Device split | Optional - useful for monthly reports |
+| `search-console-countries-YYYY-MM-DD.csv` | Country split | Optional - useful for monthly reports |
+
+How to export from Search Console:
+- Go to Search Console -> Performance -> Search results
+- Set date range to last 28 days, or 3 months for a fuller decision window
+- Export Queries tab -> save as `search-console-queries-YYYY-MM-DD.csv`
+- Export Pages tab -> save as `search-console-pages-YYYY-MM-DD.csv`
+- Export the chart tab -> save as `search-console-chart-YYYY-MM-DD.csv`
+- Keep the original Search Console ZIP only as a backup; use the extracted CSVs for analysis
+
+**GA4 (expected: 28-day snapshot)**
+
+| File | Expected | Status |
+|---|---|---|
+| `ga4-reports-snapshot-YYYY-MM-DD.csv` | Channel, page, event, purchase-click, and lead information where available | Check date - should match the Search Console date range |
+| `ga4-landing-pages-YYYY-MM-DD.csv` | Landing page performance, sessions, engagement, and conversions | Optional, but preferred for monthly reviews |
+
+How to export from GA4:
+- Go to GA4 -> Reports -> Acquisition -> Traffic acquisition for channel data
+- Go to Engagement -> Landing page for page-level data where available
+- Set date range to last 28 days
+- Export as CSV and save to `data/ga4/`
+- Include key events such as `generate_lead`, `begin_checkout`, and `ppp_purchase_click` when available
+
+**Customer voice (expected: maintained notes)**
+
+| File | Expected | Status |
+|---|---|---|
+| `customer-voice-notes-YYYY-MM-DD.md` | Sales objections, enquiry themes, support questions, testimonials, and wording customers actually use | Check whether new enquiries or reviews have appeared since the last note |
+
+How to update customer voice:
+- Add real phrases from emails, calls, reviews, demos, support messages, and buying objections
+- Tag each note with context: prospect, customer, support, review, or sales question
+- Keep wording close to the source where possible, but remove private personal details
+
+---
+
+### Step 3 - Data gap report
+
+Before running any review, state clearly:
+
+- Which files are present and current
+- Which files are present but stale (date is more than 6 weeks old)
+- Which files are missing entirely
+- Whether GA4 has key-event data for contact leads and purchase clicks
+
+**STOP HERE if any core file is missing or stale.**
+
+Ask the user to upload the missing data before continuing. Core files are:
+- `search-console-queries` (current)
+- `search-console-pages` (current)
+- `ga4-reports-snapshot` or `ga4-landing-pages` (current)
+
+Customer voice is important, but a review can proceed without it if the gap is noted.
+
+If the user confirms they want to proceed without a missing file, note it as a gap in the report output.
+
+---
+
+### Step 4 - Confirm data is loaded, then choose workflow
+
+Once data is confirmed or gaps are acknowledged, choose one workflow:
 - monthly review
+- opportunity review
 - competitor review
 - page refresh brief
 - technical audit
 - new page decision
 - title and CTR pass
+- conversion review
 
 Rule:
-- downstream tasks must use the latest saved report, not memory alone
+- all downstream tasks must use the latest saved files, not memory alone
+- stale files in `data/archive/` are kept for reference but must not be used as current data
+
+---
+
+### Step 5 - Archive rule
+
+When new data files are saved, move previous versions to `data/archive/YYYY-MM-DD/`. Do not delete old files. Only the most recent version of each file type should sit in the active `data/` folders.
 
 ## 4. Folder Structure
 
@@ -91,6 +175,8 @@ data/
   search-console/
   ga4/
   customer-voice/
+  archive/
+    YYYY-MM-DD/   <- stale exports moved here when superseded
 reports/
   monthly/
   ad-hoc/
@@ -107,6 +193,7 @@ docs/seo/KEYWORD_ROADMAP.md
 - raw Search Console exports go into `data/search-console/`
 - raw GA4 exports go into `data/ga4/`
 - review snippets, sales objections, enquiry themes, and customer language go into `data/customer-voice/`
+- stale raw exports go into `data/archive/YYYY-MM-DD/` when superseded
 - finished monthly reviews go into `reports/monthly/`
 - one-off investigations, SERP notes, title rewrite sheets, and technical audits go into `reports/ad-hoc/`
 - page briefs go into `content-briefs/`
@@ -116,6 +203,8 @@ docs/seo/KEYWORD_ROADMAP.md
 Use:
 - `search-console-queries-YYYY-MM-DD.csv`
 - `search-console-pages-YYYY-MM-DD.csv`
+- `search-console-chart-YYYY-MM-DD.csv`
+- `ga4-reports-snapshot-YYYY-MM-DD.csv`
 - `ga4-landing-pages-YYYY-MM-DD.csv`
 - `customer-voice-notes-YYYY-MM-DD.md`
 - `monthly-seo-report-YYYY-MM.md`
@@ -247,7 +336,19 @@ Purpose:
 
 This module is adapted from the Google Quality Rater framework. Use it when doing a deep review of any commercial or landing page, not a quick title pass.
 
-#### Scoring dimensions
+#### Step 1 - Classify intent before scoring
+
+Every page must be classified as one of:
+- **Informational** - visitor wants to understand something (blog posts, FAQ pages)
+- **Commercial Investigation** - visitor is comparing options before buying (best-of, comparison, no-subscription)
+- **Transactional** - visitor wants to buy, download, contact, or try now (homepage, no-monthly-fee, sole-traders, contact)
+- **Navigational** - visitor already knows the brand and wants to find it (contact, privacy)
+
+Rule:
+- if the page intent does not match the user intent the page is targeting, Needs Met cannot score above 5
+- fix intent mismatch before any other on-page work
+
+#### Step 2 - Score across 7 dimensions
 
 Score each on a 1–10 scale.
 
@@ -278,9 +379,21 @@ Can a visitor quickly understand what the page is about, who it is for, and what
 - 5–7: functional but not optimised
 - 8–10: clear 5-second scan test pass, CTA visible above the fold
 
-#### Per-page audit output format
+#### Step 3 - Check for red flags
 
-Use this template for every page audited under this module.
+If any of these are present, cap PQ at 4 regardless of other scoring:
+- thin content with no real value
+- keyword stuffing or forced repetition
+- no trust signals at all on a commercial page
+- misleading or overclaiming language
+- generic SaaS copy that could describe any software product
+- no real product screenshots on a transactional page
+- pricing buried or hard to find on a purchase-intent page
+- FAQ section that does not address real comparison or objection queries
+
+#### Step 4 - Per-page audit output format
+
+Save every audit to `reports/ad-hoc/`, named e.g. `page-audit-dog-walking-software-uk-2026-04-17.md`.
 
 ```
 URL: /page-slug
@@ -312,7 +425,7 @@ Content gaps:
 - what is present elsewhere in the SERP that this page is missing
 ```
 
-#### Decision logic
+#### Step 5 - Decision logic
 
 Apply these rules in order after scoring:
 
@@ -322,17 +435,6 @@ Apply these rules in order after scoring:
 4. If Experience < 6 → add real screenshots, workflow walkthroughs, or specific use cases
 5. If UX < 6 → fix structure and CTA visibility before tackling content depth
 6. If all scores are 6+ → move to keyword and copy optimisation (Phase 1 actions)
-
-#### Intent classification rule
-
-Classify the page's primary intent before scoring:
-
-- **Transactional** — visitor wants to buy or try now (homepage, no-monthly-fee, sole-traders)
-- **Commercial Investigation** — visitor is comparing options before buying (best-of, comparison, no-subscription)
-- **Informational** — visitor wants to understand something (blog posts, FAQ pages)
-- **Navigational** — visitor already knows the brand and wants to find it (contact, privacy)
-
-If the page's content does not match its intent classification, Needs Met will always be low regardless of copy quality.
 
 #### Red flags for Pack Planner Pro specifically
 
@@ -549,27 +651,108 @@ Use the data to prioritise work in this order:
 ### New page decision
 `Decide whether Pack Planner Pro needs a dedicated page for 'offline dog walking software' based on the latest Search Console data. If yes, explain why. If no, explain which existing page should be strengthened instead.`
 
-## 13. Current Action Queue
+### Page quality audit
+`Run a Google Quality Rater-style page audit on /dog-walking-software-uk using Module 7 of the SEO Manager. Score PQ, NM, Experience, Expertise, Authoritativeness, Trustworthiness, and UX. Classify intent first. Apply red flag rules. Save the output to reports/ad-hoc/.`
+
+### Conversion review
+`Run a conversion review for /dog-walking-software-no-monthly-fee using Module 6 of the SEO Manager and docs/seo/SALES_CONVERSION_FRAMEWORK.md. Check the 5-second scan test, CTA placement, pricing visibility, proof near decision points, and objection handling. Save improvement actions to reports/ad-hoc/ or include them in the page refresh brief.`
+
+## 13. Working Plan Checklist Rules
+
+Every future Pack Planner Pro plan document, including growth plans, phase plans, sprint plans, and SEO action plans, should include a working checklist.
+
+This is the standard because multiple agents may work on this repo across different sessions. Without a checklist, agents can duplicate work, miss done tasks, or start from an old priority.
+
+### What every plan document should include
+
+- A **MASTER TASK CHECKLIST** section at the top of the file, before the strategy sections
+- Markdown checkboxes for every task: `[ ]` unchecked, `[x]` done
+- Tasks grouped by phase or priority, matching the plan structure
+- A **last updated** line and **updated by** line at the bottom of the checklist
+
+### Agent rules for using the checklist
+
+1. Read the checklist first, before starting any task in any session
+2. Tick the box when a task is complete by changing `[ ]` to `[x]`
+3. Add a short note and date after the task where useful, e.g. `- done 2026-04-17`
+4. Do not remove tasks; mark them done instead
+5. Leave the box unchecked if partial and add a note explaining what is still needed
+6. Update the last-updated and updated-by lines at the bottom of the checklist
+7. Do not start a new task from the strategy sections without checking the checklist first
+
+### Checkbox status conventions
+
+| Markdown | Meaning |
+|---|---|
+| `[x]` | Complete |
+| `[ ]` | Not started |
+| `[ ]` + **PARTIALLY DONE** note | In progress but not complete |
+| `[ ]` + **HOLD** note | Waiting on data, dependency, or decision |
+| `[ ]` + **NOT CONFIRMED** note | May be done externally and needs verification |
+
+### Checklist format template
+
+```markdown
+## MASTER TASK CHECKLIST
+
+> This checklist is the live status tracker for this plan.
+> Every agent working on this repo MUST:
+> 1. Read this checklist before starting any task
+> 2. Tick the box when a task is complete: change `[ ]` to `[x]`
+> 3. Add a short note and date after the task if useful
+> 4. Do not remove tasks; mark them done instead
+> 5. If a task is partially done, add a note but leave the box unchecked
+
+---
+
+### [Phase or group name]
+
+- [x] Completed task - done YYYY-MM-DD
+- [ ] Uncompleted task - **NOT STARTED**
+- [ ] Partially done task - **PARTIALLY DONE** (note what remains)
+- [ ] Blocked task - **HOLD** (note what is blocking it)
+
+---
+
+### Checklist last updated: YYYY-MM-DD
+### Updated by: [agent name or initials]
+```
+
+### Prompt for starting any session with a plan file
+
+`Before doing any work on [plan file], read the MASTER TASK CHECKLIST at the top. Confirm which tasks are done and which are still open. Only then choose one task to work on. When complete, update the checklist before ending the session.`
+
+## 14. Current Action Queue
 
 ### High priority
-- choose and enforce one canonical host across all PPP pages
-- normalise the contact page public URL across canonical, OG, schema, sitemap, and internal links
-- replace the broken `/assets/og-image.png` references with real social image assets
-- collect and save first Search Console and GA4 exports in this repo
-- tighten intent separation between the homepage and each landing page
+- collect a wider Search Console export window (28 days or 3 months) before making new page decisions
+- keep strengthening `/dog-walking-software-no-monthly-fee` with cost comparison, FAQ coverage, and objection-handling near pricing
+- add real product screenshots or stronger workflow proof to the main commercial pages where still thin
+- add customer-language notes from enquiries, objections, support questions, or reviews into `data/customer-voice/`
+- keep tightening intent separation between the homepage and each landing page
 
 ### Medium priority
 - create page-specific refresh briefs for the five commercial landing pages
-- add customer-language notes from enquiries, objections, or reviews into `data/customer-voice/`
 - add page-specific social images for the homepage and top landing pages
 - review whether `pet-care-software` should stay broad or become more niche
 - add a conversion review pass using the rules in `docs/seo/SALES_CONVERSION_FRAMEWORK.md`
+- consider adding "dog walking diary" language naturally into the scheduling blog post if Search Console keeps showing it
 
 ### Low priority
 - build new landing pages only when repeated demand shows up in data
 - expand feature-led pages after the core commercial pages are technically clean
 
-## 14. Update Log
+## 15. Update Log
+
+### 2026-05-02
+- Upgraded the Session Start Protocol using the newer JPP SEO Manager structure
+- Added a full Data Intake Checklist for Search Console, GA4, and customer voice data
+- Added hard data-gap reporting before reviews and a stop rule for missing or stale core files
+- Added `data/archive/YYYY-MM-DD/` to the folder structure and archive rule
+- Strengthened Module 7 with intent-first scoring, PQ red-flag caps, and saved audit output requirements
+- Added prompt templates for page quality audits and conversion reviews
+- Added Working Plan Checklist Rules for future multi-session SEO plans
+- Synced the current action queue with `docs/seo/SEO_PAGE_ACTIONS.md` so completed April technical fixes are no longer listed as high priority
 
 ### 2026-04-12
 - Created the first Pack Planner Pro-specific SEO manager based on the stronger JPP operating model

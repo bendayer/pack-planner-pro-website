@@ -2,7 +2,7 @@
 
 This file translates the current repo state, GA4 data, Search Console data, and keyword research into a prioritised action queue.
 
-Last updated: 2026-04-17
+Last updated: 2026-05-02
 
 ---
 
@@ -65,6 +65,38 @@ This section records what has been shipped so a new agent can pick up without re
 **Pricing blog post pass** - completed. Added `/blog/dog-walking-pricing-guide-uk`, linked it from the blog hub, and pointed the CTA path toward contact so pricing conversations can flow into real pre-sale questions.
 
 **Tools blog post pass** - completed. Added `/blog/tools-for-dog-walkers-uk`, linked it from the blog hub, and pointed the CTA path toward `/dog-walking-software-uk` so comparison-style traffic can flow into the broad commercial page.
+
+### 2026-05-02
+
+**May data ingest** - completed. Saved the latest 28-day-ish data set in:
+- `data/search-console/search-console-chart-2026-05-02.csv`
+- `data/search-console/search-console-queries-2026-05-02.csv`
+- `data/search-console/search-console-pages-2026-05-02.csv`
+- `data/search-console/search-console-devices-2026-05-02.csv`
+- `data/search-console/search-console-countries-2026-05-02.csv`
+- `data/search-console/search-console-filters-2026-05-02.csv`
+- `data/search-console/search-console-search-appearance-2026-05-02.csv`
+- `data/ga4/ga4-reports-snapshot-2026-05-02.csv`
+
+**May SEO check** - saved at `reports/ad-hoc/seo-check-2026-05-02.md`.
+
+**New read from the May 2 data** - Search Console now shows `15` clicks from `284` impressions across the chart window, up from the tiny April 17 sample of `1` click from `62` impressions. The site is moving in the right direction.
+
+**Strongest current pages** - the homepage earned `9` clicks from `47` impressions, the invoicing blog earned `3` clicks from `51` impressions, and the scheduling blog earned `1` click from `63` impressions.
+
+**Main commercial issue** - `/dog-walking-software-uk` has the most impressions (`66`) but weak average position (`32.61`) and low CTR (`1.52%`). It needs more product proof, screenshots, and stronger internal-link support before any new broad landing page is created.
+
+**Best near-win** - `/dog-walking-software-no-monthly-fee` earned `19` impressions at average position `10.21` with `0` clicks. It remains the best commercial CTR and conversion priority.
+
+**Scheduling cluster opportunity** - `dog walker schedule planning` is ranking at average position `9.69`, while `/blog/how-to-organise-your-dog-walking-schedule` sits at average position `11.02`. The scheduling blog and scheduling landing page should be tightened together.
+
+**May SEO sprint changes** - completed.
+- Updated `/blog/how-to-organise-your-dog-walking-schedule` title, meta description, social metadata, modified date, intro copy, and body copy around `dog walker schedule planning`, `dog walking calendar`, and `dog walking diary`
+- Updated `/dog-walking-scheduling-software` title, meta description, OG copy, schema, visible FAQ, and How Scheduling Works section around schedule-planning intent
+- Added stronger product-proof and internal-link cards to `/dog-walking-software-uk`
+- Added internal-link support from the homepage pricing objection block to `/dog-walking-software-no-monthly-fee`
+- Added comparison/feature-routing links to `/dog-walking-software-no-monthly-fee`
+- Strengthened the invoicing blog's product bridge toward `/dog-walking-software-uk` and `/dog-walking-software-no-monthly-fee`
 
 ---
 
@@ -251,18 +283,33 @@ Build when: Search Console shows offline-specific demand. This is a strong USP a
 
 ---
 
-## Current Highest-Priority Actions (April 2026)
+## Current Highest-Priority Actions (May 2026)
 
-Updated order from the 2026-04-17 data:
+Updated order from the 2026-05-02 data:
 
-1. ~~Fix contact route and canonical consistency~~ — **DONE 2026-04-17**
-2. Create the OG image asset
-3. Strengthen blog CTAs to commercial pages, especially the invoicing and scheduling posts
-4. Strengthen `/dog-walking-software-uk` with app language, FAQ, and more proof
-5. Clarify the intent angle of `/pet-care-software`
-6. Keep building out the no-subscription page with comparison and objection-handling copy
-7. Add FAQ sections across all five landing pages
-8. Collect a wider Search Console export (28 days or 3 months) before making any new page decisions
+1. ~~Strengthen `/dog-walking-software-no-monthly-fee` as the best commercial near-win~~ - **DONE 2026-05-02**
+   - Add or improve visible cost comparison against subscription tools
+   - Keep "no monthly fee", "no subscription", "one-time purchase", and "buy once" visible in body copy
+   - Add more internal links to this page from homepage, pricing/comparison sections, and comparison-style blog content
+
+2. ~~Tighten the scheduling cluster~~ - **DONE 2026-05-02**
+   - Add natural phrasing around `dog walker schedule planning`, `dog walking calendar`, and `dog walking diary`
+   - Strengthen `/blog/how-to-organise-your-dog-walking-schedule` for CTR and product handoff
+   - Strengthen `/dog-walking-scheduling-software` with query-matched planning examples
+
+3. ~~Improve `/dog-walking-software-uk` with product proof and internal links~~ - **DONE 2026-05-02**
+   - Add stronger screenshots or workflow proof
+   - Reinforce what it is, who it is for, and why it beats spreadsheets or subscription tools
+   - Build internal links from the homepage and strongest blog posts using varied software/app anchors
+
+4. ~~Protect and improve the invoicing blog~~ - **DONE 2026-05-02**
+   - Keep the post that earned `3` clicks from `51` impressions working hard
+   - Add a stronger product bridge or CTA without turning the article into a sales page
+
+5. Re-check contact route consistency
+   - `/contact.html` still appears separately from `/contact` in Search Console
+   - Confirm sitemap, canonical, OG URL, schema, and internal links all point to `/contact`
+   - Keep the redirect and allow time for older route data to flush
 
 Earlier order from April 12:
 
