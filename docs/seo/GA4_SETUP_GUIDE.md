@@ -9,6 +9,7 @@ Read this before giving any GA4 instructions. Follow the steps in order and conf
 
 - GA4 property: `https://www.packplannerpro.co.uk/`
 - Measurement ID: `G-DD5MNET36T`
+- The public contact form lives in `contact.html`, is served at `/contact`, and submits through Web3Forms.
 - The site fires events from code using `gtag()` — no Google Tag Manager is involved
 - Events are already implemented and firing. The only remaining task is marking the right ones as Key Events inside the GA4 Admin panel.
 - Until key events are marked, GA4 shows 0 conversions even though the site is working correctly.

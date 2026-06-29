@@ -1,0 +1,351 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Ben's SEO Planning Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="./seo-dashboard.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand-mark" href="../index.html" aria-label="Open local Pack Planner Pro site">
+        <img src="../assets/main_logo.webp" alt="">
+      </a>
+      <div class="topbar-copy">
+        <p class="eyebrow">Local laptop dashboard</p>
+        <h1>Ben's SEO planning centre</h1>
+        <p class="lede">Search Console, GA4, keyword research, and action notes in one calm view for deciding what to work on next.</p>
+      </div>
+    </header>
+
+    <main>
+      <nav class="workflow-nav" aria-label="SEO manager sections">
+        <a href="../index.html" class="nav-highlight" target="_blank" rel="noopener noreferrer">Open local site</a>
+        <a href="#start-here">Start here</a>
+        <a href="#pages">Priority pages</a>
+        <a href="./seo-trends.html" class="nav-highlight">Trend review</a>
+        <a href="#prompt-builder">Prompt builder</a>
+        <a href="#audit-workflow">Monthly workflow</a>
+        <a href="#competitor-hub">SERP opportunities</a>
+        <a href="#data-sources">Data sources</a>
+      </nav>
+
+      <section id="data-health" class="data-health" hidden aria-live="polite"></section>
+
+      <p id="data-freshness" class="data-freshness-bar"></p>
+
+      <section class="status-grid" aria-label="SEO summary">
+        <article class="stat">
+          <span>Total clicks</span>
+          <strong id="stat-clicks">-</strong>
+          <small id="stat-clicks-note">Search Console</small>
+        </article>
+        <article class="stat">
+          <span>Total impressions</span>
+          <strong id="stat-impressions">-</strong>
+          <small id="stat-impressions-note">Search Console</small>
+        </article>
+        <article class="stat">
+          <span>Average position</span>
+          <strong id="stat-position">-</strong>
+          <small>Lower is better</small>
+        </article>
+        <article class="stat accent">
+          <span>Overall CTR</span>
+          <strong id="stat-ctr">-</strong>
+          <small id="stat-ctr-note">28-day window</small>
+        </article>
+      </section>
+
+      <section id="start-here" class="panel plan-snapshot" aria-label="Next month SEO plan">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">This month's priorities</p>
+            <h2>Top three pages to work on now</h2>
+          </div>
+          <span class="pill">From SEO_PAGE_ACTIONS</span>
+        </div>
+        <div id="plan-grid" class="plan-grid"></div>
+        <div class="plan-links" aria-label="Open SEO plan files">
+          <a class="button" href="../docs/seo/SEO_PAGE_ACTIONS.md">Open current action list</a>
+          <a class="button secondary" href="../reports/ad-hoc/seo-check-2026-05-02.md">Open latest check</a>
+          <a class="button secondary" href="../docs/seo/SEO_MONTHLY_REPORT.md">Open monthly report</a>
+          <a class="button secondary" href="../docs/seo/KEYWORD_ROADMAP.md">Open keyword roadmap</a>
+        </div>
+      </section>
+
+      <section class="layout action-layout">
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Priority changes</p>
+              <h2>Highest value changes from this data</h2>
+            </div>
+          </div>
+          <div id="priority-change-list" class="action-card-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Potential new content</p>
+              <h2>What to create, hold, or fold into existing pages</h2>
+            </div>
+          </div>
+          <div id="content-decision-list" class="action-card-list"></div>
+        </section>
+      </section>
+
+      <section id="priority-roadmap" class="roadmap-grid" aria-label="SEO roadmap">
+        <article class="panel roadmap-panel urgent">
+          <p class="eyebrow">Urgent</p>
+          <h2>Do before the next crawl push</h2>
+          <ul id="urgent-roadmap" class="roadmap-list"></ul>
+        </article>
+        <article class="panel roadmap-panel">
+          <p class="eyebrow">Next 30 days</p>
+          <h2>Build the pages that already show demand</h2>
+          <ul id="monthly-roadmap" class="roadmap-list"></ul>
+        </article>
+        <article class="panel roadmap-panel">
+          <p class="eyebrow">Long term</p>
+          <h2>Compound software proof and search demand</h2>
+          <ul id="long-roadmap" class="roadmap-list"></ul>
+        </article>
+      </section>
+
+      <section class="panel filters" aria-label="Dashboard controls">
+        <div>
+          <label for="page-search">Search pages or keywords</label>
+          <input id="page-search" type="search" placeholder="Try scheduling, invoicing, pricing...">
+        </div>
+        <div>
+          <label for="sort-pages">Rank pages by</label>
+          <select id="sort-pages">
+            <option value="opportunity">Opportunity score</option>
+            <option value="clicks">Clicks</option>
+            <option value="impressions">Impressions</option>
+            <option value="position">Best position</option>
+            <option value="ctr">CTR</option>
+          </select>
+        </div>
+        <div>
+          <label for="quick-filter">Quick view</label>
+          <select id="quick-filter">
+            <option value="all">All pages</option>
+            <option value="lowCtr">High impressions, low CTR</option>
+            <option value="nearPageOne">Positions 4 to 15</option>
+            <option value="zeroClicks">Impressions, zero clicks</option>
+            <option value="local">Software pages</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="pages" class="layout">
+        <section class="panel wide">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Ranked pages</p>
+              <h2>What needs attention first</h2>
+            </div>
+            <span id="page-count" class="pill">0 pages</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Page</th>
+                  <th>Clicks</th>
+                  <th>Impr.</th>
+                  <th>CTR</th>
+                  <th>Pos.</th>
+                  <th title="Opportunity score: impressions x position potential + CTR gap. Higher = more to gain from this page.">Score</th>
+                </tr>
+              </thead>
+              <tbody id="pages-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside class="panel detail-panel">
+          <p class="eyebrow">Selected page</p>
+          <h2 id="detail-title">Choose a page</h2>
+          <p id="detail-summary" class="muted">Click a ranked page to see keyword matches, links, risks, and next actions.</p>
+          <div id="detail-links" class="link-row"></div>
+          <div class="mini-section">
+            <h3>Working keywords</h3>
+            <ul id="detail-keywords" class="plain-list"></ul>
+          </div>
+          <div class="mini-section">
+            <h3>Recommended action</h3>
+            <p id="detail-action" class="callout">No page selected yet.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="panel weekly-panel" aria-label="Weekly SEO summary">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Weekly summary</p>
+            <h2>Is organic search getting better week by week?</h2>
+          </div>
+          <span id="weekly-range" class="pill">Last 28 days</span>
+        </div>
+        <div class="table-wrap">
+          <table class="weekly-table">
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Clicks</th>
+                <th>Impressions</th>
+                <th>CTR</th>
+                <th>Avg position</th>
+                <th>GA4 active users</th>
+                <th>Read</th>
+              </tr>
+            </thead>
+            <tbody id="weekly-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="prompt-builder" class="panel prompt-panel" aria-label="Prompt builder">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Codex / Antigravity prompt builder</p>
+            <h2>Copy a clean working prompt with the right files</h2>
+          </div>
+          <span class="pill">Uses latest local exports</span>
+        </div>
+        <div class="prompt-grid">
+          <div>
+            <label for="prompt-type">Workflow prompt</label>
+            <select id="prompt-type">
+              <option value="monthly">Monthly SEO review</option>
+              <option value="pageBrief">Page refresh brief</option>
+              <option value="newPage">New page decision</option>
+              <option value="technical">Pre-Search-Console technical audit</option>
+              <option value="crossDataset">Cross-dataset analysis (SC + GA4 + keyword data)</option>
+            </select>
+          </div>
+          <div>
+            <label for="prompt-focus">Focus page or query</label>
+            <input id="prompt-focus" type="text" placeholder="/dog-walking-software-uk or scheduling software">
+          </div>
+          <div class="prompt-actions">
+            <button id="copy-prompt" type="button">Copy prompt</button>
+            <button id="refresh-prompt" type="button" class="ghost">Refresh</button>
+          </div>
+        </div>
+        <textarea id="generated-prompt" rows="12" aria-label="Generated prompt"></textarea>
+        <p id="prompt-status" class="muted">Pick a workflow and copy this into Codex or Antigravity with the listed files attached.</p>
+      </section>
+
+      <section id="audit-workflow" class="panel command-centre" aria-label="Monthly SEO audit workflow">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">SEO manager workflow</p>
+            <h2>Full monthly audit checklist</h2>
+          </div>
+          <span id="audit-progress" class="pill">0% complete</span>
+        </div>
+        <div class="workflow-layout">
+          <div id="audit-checklist" class="audit-checklist"></div>
+          <aside class="source-guide">
+            <h3>Where to collect the data</h3>
+            <p class="muted">Use these in order, then save exports into the matching local folders before running the next report.</p>
+            <div id="collection-links" class="collection-links"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="layout lower">
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Keyword wins</p>
+              <h2>Queries to protect or push</h2>
+            </div>
+          </div>
+          <div id="keyword-list" class="keyword-list"></div>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">Research queue</p>
+          <h2>What this dashboard still needs</h2>
+          <ul id="research-list" class="task-list"></ul>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">Plan notes</p>
+          <h2>Prompt notes for Codex</h2>
+          <textarea id="planning-notes" rows="10" placeholder="Paste ideas, SERP observations, questions, or next prompts here. Saved in this browser only."></textarea>
+          <div class="note-actions">
+            <button id="save-notes" type="button">Save notes</button>
+            <button id="clear-notes" type="button" class="ghost">Clear</button>
+          </div>
+          <p id="notes-status" class="muted">Notes stay on this laptop in localStorage.</p>
+        </section>
+      </section>
+
+      <section id="competitor-hub" class="panel competitor-hub" aria-label="Competitor monitoring hub">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">SERP opportunity hub</p>
+            <h2>Who to watch, when it was updated, and how to update it</h2>
+          </div>
+          <span id="competitor-updated" class="pill">Checking source</span>
+        </div>
+        <div class="competitor-grid">
+          <section>
+            <h3>Priority SERPs to watch monthly</h3>
+            <div id="competitor-watch-list" class="action-card-list"></div>
+          </section>
+          <section>
+            <h3>Highest-value page comparisons</h3>
+            <div id="competitor-ranking-list" class="action-card-list"></div>
+          </section>
+          <aside class="source-guide">
+            <h3>How to update this hub</h3>
+            <ol class="compact-steps">
+              <li>Open the priority SERPs from the keyword roadmap.</li>
+              <li>Check competitor titles, pricing claims, screenshots, trials, and review proof.</li>
+              <li>Search the target terms in an incognito Google window.</li>
+              <li>Add meaningful findings to <code>KEYWORD_ROADMAP.md</code> or the latest SEO action note.</li>
+            </ol>
+            <div class="link-row">
+              <a class="button secondary" href="../docs/seo/KEYWORD_ROADMAP.md">Open keyword roadmap</a>
+              <a class="button secondary" href="https://www.google.co.uk/search?q=dog+walking+software+uk" target="_blank" rel="noopener">Check software SERP</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="panel strategy-panel" aria-label="SEO source coverage">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">SEO file coverage</p>
+            <h2>What strategy files this dashboard is using</h2>
+          </div>
+        </div>
+        <div id="strategy-source-list" class="source-list"></div>
+      </section>
+
+      <section id="data-sources" class="panel data-panel">
+        <p class="eyebrow">Data sources</p>
+        <h2>Current files being read</h2>
+        <div id="source-list" class="source-list"></div>
+      </section>
+    </main>
+
+    <script src="./seo-dashboard.js"></script>
+  </body>
+</html>
+
+

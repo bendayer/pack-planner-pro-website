@@ -1,0 +1,214 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>PPP SEO Trend Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="./seo-trends.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand-mark" href="../index.html" aria-label="Open local Pack Planner Pro site">
+        <img src="../assets/main_logo.webp" alt="">
+      </a>
+      <div>
+        <p class="eyebrow">SEO manager review</p>
+        <h1>Trend review centre</h1>
+        <p class="lede">Week-by-week and snapshot comparisons across Search Console, GA4, queries, pages, devices, countries, and conversion planning inputs.</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="button" href="../index.html" target="_blank" rel="noopener noreferrer">Open local site</a>
+        <a class="button secondary" href="./seo-dashboard.html">Back to dashboard</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="data-health" class="data-health" hidden></section>
+
+      <section class="hero-grid">
+        <article class="stat">
+          <span>Latest clicks</span>
+          <strong id="latest-clicks">-</strong>
+          <small id="latest-clicks-note">Search Console</small>
+        </article>
+        <article class="stat">
+          <span>Latest impressions</span>
+          <strong id="latest-impressions">-</strong>
+          <small id="latest-impressions-note">Search Console</small>
+        </article>
+        <article class="stat">
+          <span>Latest CTR</span>
+          <strong id="latest-ctr">-</strong>
+          <small id="latest-ctr-note">Click capture</small>
+        </article>
+        <article class="stat accent">
+          <span>Latest avg position</span>
+          <strong id="latest-position">-</strong>
+          <small>Lower is better</small>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Executive trend read</p>
+            <h2>What changed across the available exports</h2>
+          </div>
+          <span id="snapshot-count" class="pill">Loading</span>
+        </div>
+        <div id="trend-read" class="read-grid"></div>
+      </section>
+
+      <section class="chart-grid">
+        <article class="panel chart-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Daily Search Console</p>
+              <h2>Clicks and impressions over time</h2>
+            </div>
+          </div>
+          <div id="daily-line-chart" class="chart"></div>
+        </article>
+        <article class="panel chart-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Weekly movement</p>
+              <h2>Week-by-week organic trend</h2>
+            </div>
+          </div>
+          <div id="weekly-bar-chart" class="chart"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Rolling export comparison</p>
+            <h2>Snapshot totals by export date</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Export</th>
+                <th>Window</th>
+                <th>Clicks</th>
+                <th>Impressions</th>
+                <th>CTR</th>
+                <th>Avg position</th>
+                <th>Vs previous</th>
+              </tr>
+            </thead>
+            <tbody id="snapshot-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="chart-grid">
+        <article class="panel chart-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Month-by-month</p>
+              <h2>Organic trend by calendar month</h2>
+            </div>
+          </div>
+          <div id="monthly-bar-chart" class="chart"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Monthly read</p>
+              <h2>Clicks, impressions, CTR, and position</h2>
+            </div>
+          </div>
+          <div id="monthly-table" class="mini-table"></div>
+        </article>
+      </section>
+
+      <section class="compare-grid">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Pages</p>
+              <h2>Biggest page movers</h2>
+            </div>
+          </div>
+          <div id="page-movers" class="card-list"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Queries</p>
+              <h2>Keyword movers and risks</h2>
+            </div>
+          </div>
+          <div id="query-movers" class="card-list"></div>
+        </article>
+      </section>
+
+      <section class="compare-grid">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Device mix</p>
+              <h2>Mobile, desktop, and tablet</h2>
+            </div>
+          </div>
+          <div id="device-chart" class="chart compact-chart"></div>
+          <div id="device-table" class="mini-table"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Country quality</p>
+              <h2>UK traffic vs noise</h2>
+            </div>
+          </div>
+          <div id="country-chart" class="chart compact-chart"></div>
+          <div id="country-table" class="mini-table"></div>
+        </article>
+      </section>
+
+      <section class="compare-grid">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">GA4</p>
+              <h2>Active users by week</h2>
+            </div>
+          </div>
+          <div id="ga4-chart" class="chart compact-chart"></div>
+          <div id="ga4-table" class="mini-table"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Conversion signals</p>
+              <h2>SEO proof and conversion inputs to track monthly</h2>
+            </div>
+          </div>
+          <div id="local-signal-cards" class="card-list"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Data coverage</p>
+            <h2>Files used by this trend page</h2>
+          </div>
+        </div>
+        <div id="source-list" class="source-list"></div>
+      </section>
+    </main>
+
+    <script src="./seo-trends.js"></script>
+  </body>
+</html>
+
+
