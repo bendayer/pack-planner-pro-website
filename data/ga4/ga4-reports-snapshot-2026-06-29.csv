@@ -1,0 +1,59 @@
+# ----------------------------------------
+# Reports snapshot
+# Account: Ben Dayer-Swan
+# Property: https://www.packplannerpro.co.uk/
+# ----------------------------------------
+#  
+# Start date: 20260401
+# End date: 20260629
+Add to carts,Purchases,Purchase revenue,ARPPU
+
+
+#  
+# Start date: 20260401
+# End date: 20260629
+Item name,Items added to cart,Items purchased,Item revenue
+
+
+#  
+# Start date: 20260401
+# End date: 20260629
+Session source / medium,Session key event rate
+
+
+#  
+# Start date: 20260401
+# End date: 20260629
+Nth day,Items purchased
+
+
+#  
+# Start date: 20260401
+# End date: 20260629
+First user source / medium,Active users
+(direct) / (none),61
+google / organic,24
+api.scraperforce.com / referral,2
+tagassistant.google.com / referral,1
+
+#  
+# Start date: 20260401
+# End date: 20260629
+Session source / medium,Sessions
+(direct) / (none),104
+google / organic,52
+tagassistant.google.com / referral,18
+vercel.com / referral,11
+api.scraperforce.com / referral,2
+tacray.com / referral,1
+
+#  
+# Start date: 20260401
+# End date: 20260629
+Nth day,Total purchasers,First time purchasers
+
+
+#  
+# Start date: 20260401
+# End date: 20260629
+Nth week,Average purchase revenue per active user

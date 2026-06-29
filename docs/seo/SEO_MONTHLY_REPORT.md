@@ -391,3 +391,50 @@ The site is moving in the right direction. Search visibility has broadened enoug
 - `/dog-walking-software-uk` should be strengthened with proof, screenshots, and internal links before any new broad software page is created
 - the invoicing blog is worth protecting and improving because it is already earning clicks
 - new page creation should stay on hold until existing pages have been strengthened and another data cycle confirms repeated demand
+
+## June Update: 2026-06-29
+
+Additional inputs used for this update:
+- GA4 snapshot for `https://www.packplannerpro.co.uk/` covering April 1, 2026 to June 29, 2026
+- Search Console export generated on June 29, 2026
+- Search Console chart rows in the export covering April 4, 2026 to June 27, 2026
+- Detailed report saved at `reports/ad-hoc/seo-check-2026-06-29.md`
+- Current action queue updated at `docs/seo/SEO_PAGE_ACTIONS_CURRENT.md`
+
+### June headline read
+
+Visibility has grown, but clicks have not scaled with impressions yet.
+
+- Search Console shows `40` clicks from `1,669` impressions across the export window
+- CTR has fallen from `5.28%` in April to `1.58%` in June as the site appears for broader queries
+- United Kingdom remains the only meaningful target market with `38` clicks from `1,215` impressions
+- Mobile search performs far better than desktop: mobile CTR `5.01%` vs desktop CTR `1.29%`
+- GA4 shows `52` sessions from `google / organic`, but purchase/add-to-cart/key-event rows are still empty in the export
+
+### June page movement
+
+- `/`: `17` clicks, `167` impressions, `10.18%` CTR, average position `5.13`
+- `/blog/how-to-organise-your-dog-walking-schedule`: `10` clicks, `438` impressions, average position `10.14`
+- `/blog/dog-walking-invoicing-how-to-invoice-clients-properly`: `5` clicks, `249` impressions, average position `9.20`
+- `/dog-walking-software-uk`: `4` clicks, `384` impressions, average position `35.02`
+- `/pet-care-software`: `1` click, `303` impressions, average position `58.57`
+- `/dog-walking-scheduling-software`: `1` click, `95` impressions, average position `23.82`
+- `/dog-walking-software-no-monthly-fee`: `0` clicks, `41` impressions, average position `13.41`
+
+### June query movement
+
+- `dog walker schedule planning`: `0` clicks, `88` impressions, average position `9.39`
+- `dog walking diary`: `0` clicks, `14` impressions, average position `9.50`
+- `dog walking invoice`: `0` clicks, `7` impressions, average position `12.43`
+- `pack planner`: `2` clicks from `21` impressions, average position `5.62`
+- `dog walking software`: `0` clicks, `166` impressions, average position `50.40`
+- `dog walking software uk`: `0` clicks, `63` impressions, average position `51.79`
+
+### What this changes
+
+- the scheduling blog is now the strongest page-level near-win and should be refreshed first
+- `/dog-walking-software-no-monthly-fee` remains the best commercial near-win because it is around position `13` with no clicks
+- `/dog-walking-software-uk` has enough impressions to justify more product proof and internal links, but its average position is still too low for title changes alone
+- `/pet-care-software` is broad and weak; reassess whether it should be narrowed or de-prioritised
+- no new landing pages should be created until existing scheduling, no-monthly-fee, and UK software pages are strengthened
+- GA4 conversion measurement still needs checking because Search Console demand is visible but commercial outcomes are not measurable from the export

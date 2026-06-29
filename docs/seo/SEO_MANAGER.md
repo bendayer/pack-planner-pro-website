@@ -41,6 +41,15 @@ Every full Pack Planner Pro SEO review cycle should create or update these outpu
 7. Conversion uplift actions
 - changes that should increase enquiries and purchases from existing traffic
 
+8. AI and zero-click watch notes
+- page-type, query, CTR, and engagement signals that may show search results are answering more before the click
+
+9. Authority and mention tracking
+- backlinks, directories, reviews, software mentions, comparison listings, and other entity signals that support brand trust
+
+10. Behaviour analytics actions
+- UX, content, internal-linking, and conversion fixes based on how visitors actually use key pages when behaviour data is available
+
 ## 2. Site Snapshot
 
 | Field | Value |
@@ -55,7 +64,19 @@ Every full Pack Planner Pro SEO review cycle should create or update these outpu
 | Preferred long-term public route | `/contact` |
 | Analytics | GA4 present |
 | Search Console | Exports stored under `data/search-console/` |
+| Behaviour analytics | Optional - Microsoft Clarity or equivalent if enabled |
+| Search everywhere inputs | Optional - Bing Webmaster Tools, AI search spot-checks, software-directory mentions |
 | Current owner entity in markup | `Jennie's Positive Paws` |
+
+### Contact Form Setup
+
+- Contact form file: `contact.html`
+- Public route: `https://www.packplannerpro.co.uk/contact`
+- Form provider: Web3Forms
+- Submit endpoint: `https://api.web3forms.com/submit`
+- Access key location: hidden `access_key` field inside the form markup
+- GA4 success events fired after a successful submit: `ppp_contact_submit_success` and `generate_lead`
+- Current recommendation: keep the lightweight Web3Forms setup for the public contact page unless Zoho CRM/workflow integration becomes a clear operational need.
 
 ## 3. Session Start Protocol
 
@@ -69,6 +90,7 @@ Read these files before doing anything else:
 - `docs/seo/SEO_PAGE_ACTIONS.md`
 - `docs/seo/KEYWORD_ROADMAP.md`
 - `docs/seo/SALES_CONVERSION_FRAMEWORK.md` when conversion or CTA work is involved
+- `docs/seo/SEO_PAGE_ACTIONS_CURRENT.md` if present and newer than `SEO_PAGE_ACTIONS.md`
 - any recent files in `reports/monthly/` and `reports/ad-hoc/`
 
 ---
@@ -120,6 +142,24 @@ How to update customer voice:
 - Tag each note with context: prospect, customer, support, review, or sales question
 - Keep wording close to the source where possible, but remove private personal details
 
+**Behaviour analytics (optional but useful for conversion reviews)**
+
+| File | Expected | Status |
+|---|---|---|
+| `clarity-live-insights-YYYY-MM-DD.json` or `behaviour-insights-YYYY-MM-DD.md` | Popular pages, scroll depth, engagement, click friction, rage/dead clicks, referrers, and conversion-path notes | Optional - use only if current |
+
+How to use behaviour data:
+- Use behaviour data to explain human friction, not rankings.
+- Keep raw exports local unless intentionally sharing a redacted summary.
+- Save written findings in `reports/ad-hoc/` or include them in the monthly report.
+
+**Authority and search-everywhere inputs (optional monthly notes)**
+
+| File | Expected | Status |
+|---|---|---|
+| `authority-notes-YYYY-MM-DD.md` | New links, directory listings, reviews, social mentions, competitor mentions, or software roundups | Optional |
+| `bing-ai-notes-YYYY-MM-DD.md` | Bing Webmaster Tools or Bing AI Performance observations if available | Optional |
+
 ---
 
 ### Step 3 - Data gap report
@@ -140,6 +180,8 @@ Ask the user to upload the missing data before continuing. Core files are:
 
 Customer voice is important, but a review can proceed without it if the gap is noted.
 
+Behaviour analytics, Bing, and authority notes are useful but not required. If missing, do not block the review; record the gap and continue from Search Console, GA4, and customer voice.
+
 If the user confirms they want to proceed without a missing file, note it as a gap in the report output.
 
 ---
@@ -155,6 +197,9 @@ Once data is confirmed or gaps are acknowledged, choose one workflow:
 - new page decision
 - title and CTR pass
 - conversion review
+- behaviour analytics review
+- AI / zero-click watch
+- authority and mention review
 
 Rule:
 - all downstream tasks must use the latest saved files, not memory alone
@@ -174,7 +219,9 @@ Use this structure inside this repo:
 data/
   search-console/
   ga4/
+  clarity/
   customer-voice/
+  authority/
   archive/
     YYYY-MM-DD/   <- stale exports moved here when superseded
 reports/
@@ -193,6 +240,8 @@ docs/seo/KEYWORD_ROADMAP.md
 - raw Search Console exports go into `data/search-console/`
 - raw GA4 exports go into `data/ga4/`
 - review snippets, sales objections, enquiry themes, and customer language go into `data/customer-voice/`
+- raw or redacted behaviour analytics exports go into `data/clarity/` when available
+- backlink, directory, review, AI-search, and software-mention notes go into `data/authority/`
 - stale raw exports go into `data/archive/YYYY-MM-DD/` when superseded
 - finished monthly reviews go into `reports/monthly/`
 - one-off investigations, SERP notes, title rewrite sheets, and technical audits go into `reports/ad-hoc/`
@@ -206,7 +255,9 @@ Use:
 - `search-console-chart-YYYY-MM-DD.csv`
 - `ga4-reports-snapshot-YYYY-MM-DD.csv`
 - `ga4-landing-pages-YYYY-MM-DD.csv`
+- `clarity-live-insights-YYYY-MM-DD.json`
 - `customer-voice-notes-YYYY-MM-DD.md`
+- `authority-notes-YYYY-MM-DD.md`
 - `monthly-seo-report-YYYY-MM.md`
 - `dog-walking-software-uk-refresh-YYYY-MM-DD.md`
 
@@ -225,9 +276,11 @@ What to look for:
 - high impressions and weak CTR
 - repeated modifiers like `UK`, `no monthly fee`, `sole traders`, `Windows`, `offline`, `scheduling`
 - signs of cannibalisation between similar landing pages
+- page-type AI/zero-click patterns: high impressions with weak CTR, especially on informational, comparison, FAQ, and feature pages
+- conversational queries: 5+ word natural-language questions using who, what, how, why, where, when, which, can I, should I, or do I need
 
 Main output:
-- refresh list, title rewrite list, new-page candidates
+- refresh list, title rewrite list, new-page candidates, AI/zero-click watch list
 
 ### Module 2: Competitor Review
 Purpose:
@@ -257,15 +310,18 @@ Purpose:
 Main inputs:
 - GA4 landing pages
 - Search Console page performance
+- behaviour analytics where available
 
 What to look for:
 - pages drawing impressions but not clicks
 - pages getting traffic but weak conversion intent
 - overlapping pages with weak differentiation
 - missing proof, screenshots, FAQs, or CTA clarity
+- visitors failing to reach pricing, screenshots, feature proof, FAQs, or CTAs
+- dead clicks, rage clicks, quickbacks, or excessive scrolling on commercial pages
 
 Main output:
-- page UX, copy, and conversion improvement list
+- page UX, copy, behaviour, and conversion improvement list
 
 ### Module 4: Technical Audit
 Purpose:
@@ -315,6 +371,7 @@ Main inputs:
 - testimonials and proof
 - contact-page friction
 - customer objections and sales questions
+- behaviour analytics where available
 
 What to look for:
 - weak above-the-fold clarity
@@ -323,6 +380,7 @@ What to look for:
 - missing trust signals near buying decisions
 - pricing or product-fit friction
 - pages that explain features before explaining why they matter
+- CTA, pricing, screenshot, or Payhip friction visible in behaviour data
 
 Main output:
 - conversion-focused copy and structure improvements
@@ -461,6 +519,93 @@ Run this after E-E-A-T scoring passes. Only do keyword work on pages with PQ ≥
 - At least one inbound internal link from another page pointing here
 - FAQ section uses real search query phrasing, not invented questions
 
+### Module 8: Behaviour Analytics Review
+
+Purpose:
+- find the human friction behind weak conversion or engagement
+- turn scroll, click, rage/dead-click, and session-path evidence into page fixes
+- avoid guessing why visitors leave important commercial pages
+
+Main inputs:
+- GA4 landing-page data
+- Search Console page/query data
+- Microsoft Clarity or equivalent behaviour analytics where available
+- live page structure, CTAs, pricing, screenshots, FAQs, and contact flow
+
+Rule:
+- Search Console finds the search opportunity.
+- GA4 finds the performance issue.
+- Behaviour analytics finds the human friction.
+
+What to look for:
+- users not reaching pricing, screenshots, FAQs, testimonials, compatibility details, or CTAs
+- repeated clicks on non-clickable screenshots, feature labels, pricing text, or comparison tables
+- dead clicks, rage clicks, quickbacks, excessive scrolling, or very short sessions on commercial pages
+- mobile-specific friction around hero CTAs, tables, sticky elements, Payhip buttons, and the contact form
+- AI or referral traffic landing on pages that do not explain the product clearly enough for first-time visitors
+
+Main output:
+- behaviour-backed page fixes saved in `reports/ad-hoc/` or folded into a page refresh brief
+- a measure-after-changes note covering scroll depth, CTA clicks, contact submits, purchase clicks, engagement time, and key-event movement
+
+Important:
+- do not treat behaviour analytics as a ranking tool
+- do not overfit one recording or one session
+- use behaviour data to support practical UX and conversion decisions
+
+### Module 9: AI / Zero-Click and Search Everywhere Review
+
+Purpose:
+- monitor whether search results, AI answers, comparison tools, or answer boxes are changing click behaviour
+- keep Pack Planner Pro easy for search engines, AI systems, and buyers to understand
+- spot new discovery surfaces without chasing unsupported SEO hacks
+
+Main inputs:
+- Search Console queries and pages
+- GA4 landing pages and source/medium data
+- Bing Webmaster Tools or AI Performance data if available
+- behaviour analytics AI/referral data if available
+- manual spot-checks for priority commercial queries where useful
+
+What to look for:
+- impressions rising while CTR falls on informational, comparison, FAQ, or feature-led pages
+- long conversational queries that could be answered directly in FAQs or short direct-answer blocks
+- pages with fewer clicks but stronger engagement, suggesting fewer but better-qualified visitors
+- new branded searches, direct visits, or referral patterns after AI/search discovery
+- missing plain-text facts that AI systems and SERP features need: one-time purchase, no subscription, offline use, Windows desktop, UK dog walkers, pricing, support route, and product fit
+
+Main output:
+- AI/zero-click watch notes in `reports/ad-hoc/` or the monthly report
+- direct-answer, FAQ, internal-link, schema, or title/meta actions where the evidence supports them
+
+Guardrail:
+- treat CTR/impression patterns as proxy signals only unless Search Console, Bing, Clarity, or another platform exposes direct AI visibility data
+- record direct AI-search fields exactly as the platform names them; do not invent metrics
+
+### Module 10: Authority and Mention Review
+
+Purpose:
+- track whether the brand is becoming easier to verify across the web
+- support Google, Bing, AI systems, and human buyers with consistent entity signals
+
+Main inputs:
+- customer reviews and testimonials
+- directory listings and software roundups
+- referral sources in GA4
+- backlink or mention notes
+- social profiles and public business details
+
+What to look for:
+- inconsistent business name, URL, pricing, product type, or contact details
+- mentions that describe the product vaguely or wrongly
+- software directories or comparison pages where Pack Planner Pro should appear
+- review/testimonial themes that can be used as proof on commercial pages
+- new referral sources that deserve a stronger landing page or tracking note
+
+Main output:
+- authority notes saved to `data/authority/` or `reports/ad-hoc/`
+- specific follow-up actions, such as fixing an outdated listing, adding a testimonial near a CTA, or creating a clearer comparison answer
+
 ## 6. Current Page Set
 
 ### Core pages
@@ -483,7 +628,8 @@ Run this after E-E-A-T scoring passes. Only do keyword work on pages with PQ ≥
 ## 7. Stable SEO Rules
 
 ### Canonicals and URLs
-- Use `https://packplannerpro.co.uk/...` everywhere for canonical URLs, `og:url`, sitemap entries, and schema URLs unless a host migration is deliberately approved.
+- Use `https://www.packplannerpro.co.uk/...` everywhere for canonical URLs, `og:url`, sitemap entries, and schema URLs unless a host migration is deliberately approved.
+- Keep the apex domain `https://packplannerpro.co.uk` redirecting to `https://www.packplannerpro.co.uk`.
 - Do not mix `.co.uk` and `.com` in live metadata.
 - Do not mix `/contact` and `/contact.html` in public signals. Pick one public route and align canonical, OG, schema, sitemap, and internal links together.
 - If a cleaner route structure is adopted later, ship redirects and metadata changes together.
@@ -545,7 +691,8 @@ Run this after E-E-A-T scoring passes. Only do keyword work on pages with PQ ≥
 Run this before any major indexing push or sitemap resubmission.
 
 ### Required checks
-- confirm the live canonical host is still `https://packplannerpro.co.uk`
+- confirm the live canonical host is still `https://www.packplannerpro.co.uk`
+- confirm the apex domain still redirects to the `www` host
 - confirm `robots.txt` allows crawling and exposes the live sitemap
 - confirm `sitemap.xml` only includes intended indexable URLs
 - confirm every indexable HTML page has:
@@ -633,7 +780,150 @@ Use the data to prioritise work in this order:
 5. Technical trust gap
 - fix canonicals, sitemap drift, broken social assets, and schema mismatches before broad expansion
 
-## 12. Prompt Library
+## 12. AI Visibility and Crawler Policy
+
+### Core rule
+- Do not treat AI search as a separate channel that overrides SEO fundamentals.
+
+### Visibility policy
+- Keep pages crawlable and indexable.
+- Keep important commercial facts in visible text, not only in screenshots, widgets, scripts, or schema:
+- one-time purchase
+- no subscription
+- works offline
+- Windows desktop software
+- built for UK dog walkers, dog trainers, and pet care businesses
+- clear pricing and contact route
+- Keep schema aligned with visible copy and real product details.
+- Do not accidentally block useful AI/search crawlers if `robots.txt` is edited later.
+- Do not mass-publish AI-written landing pages, near-duplicate feature pages, or keyword-clone content.
+
+### AI / zero-click monitoring workflow
+
+Run this during monthly reviews when Search Console and GA4 data are current.
+
+1. Check for direct platform reporting:
+- Search Console AI or generative-search visibility fields if available
+- Bing Webmaster Tools AI Performance if available
+- Clarity AI Visibility or AI referral fields if available
+
+2. If direct reporting exists, record the raw platform field names, date range, cited pages, queries, countries, impressions/clicks/referrals, and source screen.
+
+3. If direct reporting does not exist, use proxy checks only:
+- page type
+- impressions
+- CTR
+- average position
+- GA4 engagement
+- direct-return behaviour
+- branded search movement
+
+4. Segment pages by type:
+- Homepage
+- Commercial landing page
+- Feature page
+- Blog or informational page
+- Conversion/support page
+
+5. Flag a page for AI/zero-click watch when:
+- impressions rise and CTR falls while position is stable
+- long conversational queries start appearing repeatedly
+- the page earns impressions but answers are buried below vague copy
+- GA4 shows fewer but more engaged organic visitors
+- the page lacks plain-text facts that a search result or AI answer would need
+
+6. Actions to consider:
+- improve the title/meta for human CTR
+- add a short direct-answer block or better FAQ where it fits real intent
+- strengthen internal links to the best commercial page
+- add missing plain-text facts, screenshots, pricing context, compatibility details, or proof
+- inspect the live SERP before assuming AI impact
+
+### Query fan-out coverage
+
+For priority commercial topics, audit the cluster rather than only one page. A buyer's broad question may split into sub-questions such as:
+- What software helps dog walkers schedule clients?
+- Is there a no-subscription option?
+- Does it work offline?
+- Is it suitable for sole traders?
+- Can it handle invoicing, recurring walks, and calendar export?
+- How much does it cost?
+- Is it Windows-only?
+
+Map these to existing pages or sections before creating a new page. Use new pages only when repeated demand does not fit an existing page cleanly.
+
+## 13. Search Everywhere and Authority Policy
+
+### Core rule
+- Use authority work to make Pack Planner Pro more verifiable, not to chase low-quality links.
+
+### What to track
+- software directories and comparison mentions
+- pet-care or dog-walking business directories
+- customer reviews and testimonials
+- social profiles and public business details
+- referral traffic in GA4
+- backlinks, citations, and unlinked brand mentions
+- Bing Webmaster Tools data if available
+
+### Guardrails
+- keep the product description consistent: Windows desktop dog walking software, one-time purchase, no subscription, offline-first
+- do not create satellite sites or duplicate listings with inconsistent names
+- do not buy low-quality links
+- do not use third-party fast-indexing services as a standard workflow
+- prefer a few relevant UK pet-care, software, or small-business mentions over broad generic directory spam
+
+## 14. Tool Stack and Reporting
+
+### Primary data tools
+- Google Search Console
+- GA4
+- customer voice notes from enquiries, support, reviews, and sales questions
+
+### Add when useful
+- Microsoft Clarity or equivalent behaviour analytics
+- Bing Webmaster Tools, including AI Performance if available
+- Looker Studio for combined Search Console and GA4 reporting
+- manual SERP and AI-product spot-checks for priority commercial queries
+
+### Local tools currently present
+- `design/local-tools/generate-seo-weekly-report.js` supports structured SEO reporting from saved data.
+- `design/local-tools/seo-dashboard.html` provides a local dashboard surface for SEO review.
+- `design/local-tools/seo-trends.html` provides a local trend-review surface.
+
+### Missing tool ideas borrowed from the JPP system
+- a refresh-candidate scorer that combines sitemap freshness, Search Console page data, metadata, H1s, FAQs, and internal-link depth
+- a one-page SEO/content lint that checks title, meta, canonical, H1 count, CTA presence, FAQ coverage, alt text, banned phrases, and PPP-specific proof requirements
+- an SEO drift check that compares accepted baselines against current titles, meta descriptions, canonicals, robots tags, H1s, JSON-LD, Open Graph, and page existence
+
+These are useful future improvements, but do not block normal SEO work. If added later, treat them as triage aids, not automatic publishing instructions.
+
+## 15. AI SEO Automation Guardrails
+
+Use the useful parts of AI SEO automation:
+- repeatable research, brief, draft, publish-check, indexing-check, and tracking workflows
+- content trackers that record target query, source of demand, page status, publish date, and Search Console movement
+- AI-assisted briefs, metadata options, internal-link maps, and first drafts
+- post-publish checks for sitemap inclusion, canonical URL, indexability, internal links, and Search Console visibility
+
+Do not copy high-volume AI SEO tactics:
+- no mass AI publishing
+- no thin keyword-clone landing pages
+- no satellite sites
+- no pages created only because a keyword looks easy
+- no third-party fast-indexing service as a standard workflow
+
+Pack Planner Pro-specific rule:
+- every new or refreshed page must be useful to a UK dog walker, trainer, or pet-care business owner, show real product detail or workflow proof, and pass human review before publishing
+
+Post-publish indexing rule:
+- use sitemap and Search Console workflows first
+- use URL Inspection for a few priority pages
+- resubmit or reference the sitemap for larger batches
+- remember that requesting a crawl does not guarantee indexing or ranking
+- do not use Google's Indexing API for normal PPP pages because Google's documentation limits it to `JobPosting` and livestream `BroadcastEvent` pages
+
+## 16. Prompt Library
 
 ### Monthly review
 `Run the Pack Planner Pro monthly SEO review from the latest files in data/search-console and data/ga4. Update docs/seo/SEO_MONTHLY_REPORT.md and save a dated copy in reports/monthly/.`
@@ -659,7 +949,16 @@ Use the data to prioritise work in this order:
 ### Conversion review
 `Run a conversion review for /dog-walking-software-no-monthly-fee using Module 6 of the SEO Manager and docs/seo/SALES_CONVERSION_FRAMEWORK.md. Check the 5-second scan test, CTA placement, pricing visibility, proof near decision points, and objection handling. Save improvement actions to reports/ad-hoc/ or include them in the page refresh brief.`
 
-## 13. Working Plan Checklist Rules
+### Behaviour analytics review
+`Run a Pack Planner Pro behaviour analytics review for /dog-walking-software-no-monthly-fee using Module 8. Combine Search Console, GA4, current page structure, and any Clarity or behaviour export available. Save the behaviour findings and page fixes in reports/ad-hoc/.`
+
+### AI / zero-click watch
+`Run the Pack Planner Pro AI / zero-click watch from the latest Search Console and GA4 exports. Segment URLs by page type, flag high-impression low-CTR groups, extract 5+ word conversational queries, list direct AI/Bing/Clarity visibility fields if available, and save the findings in reports/ad-hoc/.`
+
+### Authority and mention review
+`Run a Pack Planner Pro authority and mention review. Check saved authority notes, GA4 referrals, directory/software mentions, reviews, and public business details. Save specific cleanup or outreach actions in data/authority/ or reports/ad-hoc/.`
+
+## 17. Working Plan Checklist Rules
 
 Every future Pack Planner Pro plan document, including growth plans, phase plans, sprint plans, and SEO action plans, should include a working checklist.
 
@@ -724,7 +1023,7 @@ This is the standard because multiple agents may work on this repo across differ
 
 `Before doing any work on [plan file], read the MASTER TASK CHECKLIST at the top. Confirm which tasks are done and which are still open. Only then choose one task to work on. When complete, update the checklist before ending the session.`
 
-## 14. Current Action Queue
+## 18. Current Action Queue
 
 ### High priority
 - collect a wider Search Console export window (28 days or 3 months) before making new page decisions
@@ -732,6 +1031,7 @@ This is the standard because multiple agents may work on this repo across differ
 - add real product screenshots or stronger workflow proof to the main commercial pages where still thin
 - add customer-language notes from enquiries, objections, support questions, or reviews into `data/customer-voice/`
 - keep tightening intent separation between the homepage and each landing page
+- run an AI/zero-click watch once the next current Search Console and GA4 exports are saved
 
 ### Medium priority
 - create page-specific refresh briefs for the five commercial landing pages
@@ -739,12 +1039,20 @@ This is the standard because multiple agents may work on this repo across differ
 - review whether `pet-care-software` should stay broad or become more niche
 - add a conversion review pass using the rules in `docs/seo/SALES_CONVERSION_FRAMEWORK.md`
 - consider adding "dog walking diary" language naturally into the scheduling blog post if Search Console keeps showing it
+- start a light authority/mention tracker in `data/authority/`
+- consider behaviour analytics if conversion questions become hard to answer from GA4 alone
 
 ### Low priority
 - build new landing pages only when repeated demand shows up in data
 - expand feature-led pages after the core commercial pages are technically clean
+- build refresh/lint/drift helper tools only after the manual SEO workflow is stable
 
-## 15. Update Log
+## 19. Update Log
+
+### 2026-06-29
+- Compared the JPP SEO Manager against the Pack Planner Pro version and added PPP-adapted gaps for behaviour analytics, AI/zero-click monitoring, search-everywhere authority tracking, tool-stack notes, and AI SEO automation guardrails.
+- Added optional `data/clarity/` and `data/authority/` inputs without making them blockers for monthly reviews.
+- Added modules for Behaviour Analytics Review, AI / Zero-Click and Search Everywhere Review, and Authority and Mention Review.
 
 ### 2026-05-02
 - Upgraded the Session Start Protocol using the newer JPP SEO Manager structure
